@@ -1,0 +1,21 @@
+{
+  "CookieBanner": {
+    "title": "We use analytics cookies",
+    "description": "Vercel Analytics helps us understand how our site is used — no personal data is stored or sold. <privacyLink>Privacy policy ↗</privacyLink>",
+    "declineButton": "Decline",
+    "acceptButton": "Accept cookies",
+    "ariaLabel": "Cookie consent"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Go back home"
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "description": "We encountered an unexpected error. Please try again or return to the homepage.",
+    "tryAgain": "Try again",
+    "backHome": "Go back home",
+    "reference": "Error reference"
+  }
+}
