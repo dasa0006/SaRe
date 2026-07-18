@@ -1,21 +1,27 @@
 {
   "CookieBanner": {
-    "ariaLabel": "Cookie samtykke",
-    "title": "Vi bruge analytiske cookies",
-    "description": "Vercel Analytics hjælper os med at forstå hvordan vores hjemmeside bliver brugt - ingen personlig data bliver gemt eller solgt. <privacyLink>Privatlivspolitik ↗</privacyLink>",
-    "acceptButton": "Accepter cookies",
-    "declineButton": "Afvis cookies"
+    "title": "Vi bruger cookies",
+    "description": "Dette websted bruger cookies til at forbedre din oplevelse.",
+    "accept": "Accepter",
+    "decline": "Afvis"
   },
   "NotFound": {
-    "title": "Side ikke fundet",
-    "description": "Siden du leder efter findes ikke eller er blevet flyttet.",
-    "backHome": "Gå tilbage til forsiden"
+    "title": "Siden blev ikke fundet",
+    "description": "Siden du leder efter findes ikke.",
+    "backToHome": "Tilbage til forsiden"
   },
   "Error": {
     "title": "Noget gik galt",
-    "description": "Vi stødte på en uventet fejl. Prøv venligst igen, eller gå tilbage til forsiden.",
-    "tryAgain": "Prøv igen",
-    "backHome": "Gå tilbage til forsiden",
-    "reference": "Fejl reference"
+    "description": "Der opstod en uventet fejl.",
+    "retry": "Prøv igen"
+  },
+  "SiteHeader": {
+    "navHeading": "Navigation",
+    "toggleMenu": "Skift menu"
+  },
+  "Legal": {
+    "privacyPolicy": "Privatlivspolitik",
+    "cookiePolicy": "Cookiepolitik",
+    "termsOfService": "Servicevilkår"
   }
 }

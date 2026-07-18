@@ -1,12 +1,27 @@
-import "@/lib/env";
 import type { NextConfig } from "next";
+import withBundleAnalyzer from "@next/bundle-analyzer";
 import createNextIntlPlugin from "next-intl/plugin";
+import { createSecurityHeaders } from "@/security/headers";
 
-// Points to the request config file (default path, can be omitted if using this exact path)
-const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactCompiler: true,
+  images: {
+    qualities: [75, 85],
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: createSecurityHeaders(),
+      },
+    ];
+  },
 };
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(
+  withBundleAnalyzer({
+    enabled: process.env.ANALYZE === "true",
+  })(nextConfig)
+);

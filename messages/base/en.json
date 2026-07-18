@@ -1,21 +1,27 @@
 {
   "CookieBanner": {
-    "title": "We use analytics cookies",
-    "description": "Vercel Analytics helps us understand how our site is used — no personal data is stored or sold. <privacyLink>Privacy policy ↗</privacyLink>",
-    "declineButton": "Decline",
-    "acceptButton": "Accept cookies",
-    "ariaLabel": "Cookie consent"
+    "title": "We use cookies",
+    "description": "This site uses cookies to improve your experience.",
+    "accept": "Accept",
+    "decline": "Decline"
   },
   "NotFound": {
     "title": "Page not found",
-    "description": "The page you are looking for does not exist or has been moved.",
-    "backHome": "Go back home"
+    "description": "The page you are looking for doesn't exist.",
+    "backToHome": "Back to home"
   },
   "Error": {
     "title": "Something went wrong",
-    "description": "We encountered an unexpected error. Please try again or return to the homepage.",
-    "tryAgain": "Try again",
-    "backHome": "Go back home",
-    "reference": "Error reference"
+    "description": "An unexpected error occurred.",
+    "retry": "Try again"
+  },
+  "SiteHeader": {
+    "navHeading": "Navigation",
+    "toggleMenu": "Toggle menu"
+  },
+  "Legal": {
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "termsOfService": "Terms of Service"
   }
 }
