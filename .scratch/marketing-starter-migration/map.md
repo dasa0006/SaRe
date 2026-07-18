@@ -21,10 +21,14 @@ The SaRe project directory is a clean, running instance of `marketing-starter` �
 
 ## Not yet specified
 
-- **Production deployment** — the template needs a production URL for canonical links, OG images, sitemap. Unknown where/whether SaRe will be deployed. Will graduate after the clone is in place.
-- **Brand identity** — the template's `src/lib/config/site.ts` override seam has defaults (name: "Marketing Starter", description: "..."). The production validation guard will throw if these aren't customised before any production `next start`. Not urgent locally.
-- **Additional pages/components** — the template ships Home, About, Privacy Policy, Cookie Policy. Any SaRe-specific additions (pages, blocks, project-components) are not yet known.
-- **Vercel Analytics / Speed Insights** — the template does not ship these. Current SaRe had them. Revisit if needed after migration.
+All fog has graduated to issues — see below.
+
+## Graduated to issues
+
+- [Configure brand identity in SITE_CONFIG override seam](https://github.com/dasa0006/SaRe/issues/1) — decide name, description, URL, timezone
+- [Set up production deployment and canonical URL](https://github.com/dasa0006/SaRe/issues/2) — hosting, env vars, CI/CD
+- [Add SaRe-specific pages and components beyond template defaults](https://github.com/dasa0006/SaRe/issues/3) — additional content needs
+- [Consider re-adding Vercel Analytics and Speed Insights](https://github.com/dasa0006/SaRe/issues/4) — optional add-back
 
 ## Out of scope
 
