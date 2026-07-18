@@ -80,9 +80,7 @@ describe("SiteHeader", () => {
 
   it("renders the Brand component", () => {
     renderWithProviders(<SiteHeader />);
-    expect(document.querySelector("header")?.textContent).toContain(
-      "Marketing Starter"
-    );
+    expect(document.querySelector("header")?.textContent).toContain("SaRe");
   });
 
   it("renders navigation links from config", () => {
