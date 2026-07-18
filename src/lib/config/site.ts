@@ -1,8 +1,7 @@
 import { env } from "@/lib/env";
 
-const DEFAULT_NAME = "Marketing Starter";
-const DEFAULT_DESCRIPTION =
-  "A production-grade Next.js marketing site template";
+const DEFAULT_NAME = "SaRe";
+const DEFAULT_DESCRIPTION = "A production-grade Next.js marketing site";
 
 /**
  * Site-wide configuration.
