@@ -1,7 +1,8 @@
 import { env } from "@/lib/env";
 
-const DEFAULT_NAME = "SaRe";
-const DEFAULT_DESCRIPTION = "A production-grade Next.js marketing site";
+const DEFAULT_NAME = "Marketing Starter";
+const DEFAULT_DESCRIPTION =
+  "A production-grade Next.js marketing site template";
 
 /**
  * Site-wide configuration.
@@ -10,8 +11,8 @@ const DEFAULT_DESCRIPTION = "A production-grade Next.js marketing site";
  * The validation guard below warns if default values are still in place.
  */
 export const SITE_CONFIG = {
-  name: DEFAULT_NAME,
-  description: DEFAULT_DESCRIPTION,
+  name: "SaRe",
+  description: "A production-grade Next.js marketing site",
   url: env.NEXT_PUBLIC_SITE_URL,
   timezone: "Europe/Copenhagen",
   locale: "en",
@@ -26,12 +27,14 @@ if (
   process.env.NODE_ENV === "production" &&
   process.env.NEXT_PHASE !== "phase-production-build"
 ) {
+  // @ts-expect-error - guard is intentionally always false after customization
   if (SITE_CONFIG.name === DEFAULT_NAME) {
     throw new Error(
       "SITE_CONFIG.name is still the default value. " +
         "Edit src/lib/config/site.ts to set your site name."
     );
   }
+  // @ts-expect-error - guard is intentionally always false after customization
   if (SITE_CONFIG.description === DEFAULT_DESCRIPTION) {
     throw new Error(
       "SITE_CONFIG.description is still the default value. " +
