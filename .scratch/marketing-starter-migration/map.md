@@ -17,6 +17,8 @@ The SaRe project directory is a clean, running instance of `marketing-starter` �
 
 <!-- the index — one line per closed ticket: enough to judge relevance, then zoom the link for the detail the ticket holds -->
 
+- [Clone marketing-starter into SaRe](issues/01-clone-marketing-starter.md) — Template rsync'd into the SaRe directory, package.json name set to `SaRe`, pnpm installed, build verified (14 static pages, both locales). All old source replaced. Git history + remote retained.
+
 ## Not yet specified
 
 - **Production deployment** — the template needs a production URL for canonical links, OG images, sitemap. Unknown where/whether SaRe will be deployed. Will graduate after the clone is in place.
