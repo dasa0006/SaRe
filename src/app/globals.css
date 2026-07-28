@@ -21,6 +21,9 @@
 @import "../components/blocks/cta/CTA.css";
 @import "../components/blocks/text-block/TextBlock.css";
 
+/* Project Component CSS files */
+@import "../components/project-components/wip-graphic/WipGraphic.css";
+
 /* --- Primitive Tokens ---
  * These are injected into Tailwind's theme system so they are available as
  * utility classes (e.g. `bg-background`, `text-foreground`).
