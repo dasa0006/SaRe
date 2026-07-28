@@ -51,29 +51,9 @@ const WipGraphic = () => {
 
   return (
     <div className="h-screen w-full bg-amber-50/20 overflow-hidden">
-      <style jsx>{`
-        @keyframes scroll-up {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-25%);
-          }
-        }
-        .animate-scroll-up {
-          animation: scroll-up 10s linear infinite;
-          backface-visibility: hidden;
-        }
-        .animate-scroll-up:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
-
-      <ul className="animate-scroll-up will-change-transform m-0 p-0 list-none flex flex-col">
+      <ul className="animate-scroll-up m-0 p-0 list-none flex flex-col">
         {renderItems("original")}
         {renderItems("copy-1")}
-        {renderItems("copy-2")}
-        {renderItems("copy-3")}
       </ul>
     </div>
   );
