@@ -2,8 +2,6 @@
 
 This document describes the provider chain, consent system, security headers, i18n architecture, analytics strategy, and architectural decision records. It is the reference for how the template is wired together.
 
-For the phased build plan explaining _why_ things are structured this way, see [`implementation.md`](./implementation.md).
-
 ## Provider Hierarchy
 
 ```
@@ -144,7 +142,7 @@ This is a single canonical home for one concern (HTTP security headers). The Nex
 
 - Server-side loader in `src/i18n/request.ts` merges both namespaces at request time
 - Adding a locale: add to `locales` array in `src/i18n/routing.ts` + create message files (see [`contributing.md`](./contributing.md) → How to add a locale for the full walkthrough)
-- `src/i18n/routing.ts` is also the single source of `generateStaticParamsForLocales()`, re-exported by every locale-aware route (home, about, privacy, cookie-policy, the `[locale]` layout). One edit to `routing.ts` flows a new locale through every page's static generation; see [implementation.md → Phase 11](./implementation.md#phase-11-pages--composition).
+- `src/i18n/routing.ts` is also the single source of `generateStaticParamsForLocales()`, re-exported by every locale-aware route (home, about, privacy, cookie-policy, the `[locale]` layout).
 
 ---
 

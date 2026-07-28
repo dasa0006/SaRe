@@ -31,4 +31,4 @@ Rsync'd marketing-starter template over the SaRe directory (excluding .git to re
 - **i18n**: messages split into `base/` (template-author translations) and `custom/` (project translations)
 - **Tests**: unit (Vitest) + E2E (Playwright) + Storybook (visual/a11y)
 - **Pages**: Home, About, Privacy Policy, Cookie Policy (all in en + da)
-- **Docs**: architecture.md, implementation.md, contributing.md, ADRs, agent context files\*\*
+- **Docs**: architecture.md, contributing.md, ADRs, agent context files\*\*
