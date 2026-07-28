@@ -1,40 +1,27 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Homepage", () => {
-  test("renders Hero heading, FeatureGrid heading, and CTA heading", async ({
-    page,
-  }) => {
+  test("renders header, footer, and page content", async ({ page }) => {
     await page.goto("/en");
 
-    // ── Hero ─────────────────────────────────────────────────────
-    const heroHeading = page.getByRole("heading", {
-      level: 1,
-      name: "Build Better Marketing Sites",
-    });
-    await expect(heroHeading).toBeVisible();
+    // ── Site header ──────────────────────────────────────────────
+    const header = page.getByRole("banner");
+    await expect(header).toBeVisible();
 
-    // ── FeatureGrid ──────────────────────────────────────────────
-    const featuresHeading = page.getByRole("heading", {
-      level: 2,
-      name: "Everything You Need",
-    });
-    await expect(featuresHeading).toBeVisible();
+    const nav = page.getByRole("navigation", { name: "Main navigation" });
+    await expect(nav).toBeVisible();
 
-    // ── CTA ──────────────────────────────────────────────────────
-    const ctaHeading = page.getByRole("heading", {
-      level: 2,
-      name: "Ready to Get Started?",
-    });
-    await expect(ctaHeading).toBeVisible();
-  });
+    const homeLink = nav.getByRole("link", { name: "Home" });
+    await expect(homeLink).toBeVisible();
 
-  test("renders CTA action links", async ({ page }) => {
-    await page.goto("/en");
+    const aboutLink = nav.getByRole("link", { name: "About" });
+    await expect(aboutLink).toBeVisible();
 
-    const getStarted = page.getByRole("link", { name: "Get Started" });
-    await expect(getStarted.first()).toBeVisible();
+    // ── WipGraphic — brand name rendered on page ─────────────────
+    await expect(page.getByText("SaRe").first()).toBeVisible();
 
-    const learnMore = page.getByRole("link", { name: "Learn More" });
-    await expect(learnMore.first()).toBeVisible();
+    // ── Site footer ──────────────────────────────────────────────
+    const footer = page.getByRole("contentinfo");
+    await expect(footer).toBeVisible();
   });
 });

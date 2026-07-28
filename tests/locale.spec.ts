@@ -6,13 +6,8 @@ test.describe("Locale switching", () => {
   }) => {
     await page.goto("/en");
 
-    // Verify initial English content
-    await expect(
-      page.getByRole("heading", {
-        level: 1,
-        name: "Build Better Marketing Sites",
-      })
-    ).toBeVisible();
+    // Verify initial English footer tagline
+    await expect(page.getByText("Build better marketing sites.")).toBeVisible();
 
     // Switch locale to Danish using the select element.
     // Scope to the banner (header) to avoid the duplicate in the mobile drawer.
@@ -24,13 +19,8 @@ test.describe("Locale switching", () => {
     // Wait for navigation to complete — URL should now contain /da
     await expect(page).toHaveURL(/\/da(?:\/|$)/);
 
-    // Verify page now shows Danish content
-    await expect(
-      page.getByRole("heading", {
-        level: 1,
-        name: "Byg Bedre Marketingssider",
-      })
-    ).toBeVisible();
+    // Verify page now shows Danish footer tagline
+    await expect(page.getByText("Byg bedre marketingssider.")).toBeVisible();
   });
 
   test("switches from Danish to English via locale switcher", async ({
@@ -38,13 +28,8 @@ test.describe("Locale switching", () => {
   }) => {
     await page.goto("/da");
 
-    // Verify initial Danish content
-    await expect(
-      page.getByRole("heading", {
-        level: 1,
-        name: "Byg Bedre Marketingssider",
-      })
-    ).toBeVisible();
+    // Verify initial Danish footer tagline
+    await expect(page.getByText("Byg bedre marketingssider.")).toBeVisible();
 
     // Switch locale to English.
     // Scope to the banner (header) to avoid the duplicate in the mobile drawer.
@@ -58,12 +43,7 @@ test.describe("Locale switching", () => {
     // so switching from Danish to English produces just "/".
     await expect(page).toHaveURL(/\/(?:en)?\/?$/);
 
-    // Verify page now shows English content
-    await expect(
-      page.getByRole("heading", {
-        level: 1,
-        name: "Build Better Marketing Sites",
-      })
-    ).toBeVisible();
+    // Verify page now shows English footer tagline
+    await expect(page.getByText("Build better marketing sites.")).toBeVisible();
   });
 });
