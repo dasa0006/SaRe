@@ -228,12 +228,12 @@ jobs:
   e2e:
     if: contains(github.event.pull_request.labels.*.name, 'e2e') || github.ref == 'refs/heads/staging' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       1. Checkout
       2. Install pnpm
       3. pnpm install --frozen-lockfile
-      4. pnpm exec playwright install --with-deps chromium
+      4. pnpm exec playwright install --with-deps   # all browsers (chromium + firefox + webkit)
       5. pnpm test:e2e
       6. Upload playwright-report/ artifact on failure
 ```

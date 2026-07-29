@@ -13,7 +13,7 @@ jobs:
       contains(github.event.pull_request.labels.*.name, 'e2e')
       || github.ref == 'refs/heads/staging'
       || github.ref == 'refs/heads/main'
-    timeout-minutes: 15
+    timeout-minutes: 20
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +29,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps chromium
+        run: pnpm exec playwright install --with-deps
 
       - name: Run E2E tests
         run: pnpm test:e2e
