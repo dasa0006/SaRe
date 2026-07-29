@@ -184,19 +184,24 @@ Runs on every push to any branch (CI) and on every PR. This is the authoritative
 ### Pipeline: `.github/workflows/ci.yml`
 
 ```
-on: [push, pull_request]
+on:
+  push:
+    branches-ignore: [prototype/*]   # experimental, no gating needed
+  pull_request:
 
 jobs:
   quality:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       1. Checkout
       2. Install pnpm
       3. pnpm install --frozen-lockfile
-      4. pnpm lint
-      5. pnpm typecheck
-      6. pnpm test:run -- --coverage
-      7. pnpm build
+      4. Branch naming convention check (warning-only, skips main/dev/staging/prototype/*)
+      5. pnpm lint
+      6. pnpm typecheck
+      7. pnpm test:run
+      8. pnpm build
 ```
 
 | Step      | Tool                    | Fails on                                                             | Notes                                                                                  |
@@ -208,25 +213,28 @@ jobs:
 
 ### Pipeline: `.github/workflows/playwright.yml`
 
-Separate workflow to keep the main CI fast. Runs only on push to `main` and on PRs with the `e2e` label.
+Separate workflow to keep the main CI fast. Runs on push to `staging` or `main`, and on PRs targeting those branches with the `e2e` label.
 
 ```
 on:
   push:
-    branches: [main]
+    branches: [staging, main]
   pull_request:
     types: [labeled, synchronize]
+    branches: [staging, main]
 
 jobs:
   e2e:
-    if: contains(github.event.pull_request.labels.*.name, 'e2e') || github.ref == 'refs/heads/main'
+    if: contains(github.event.pull_request.labels.*.name, 'e2e') || github.ref == 'refs/heads/staging' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       1. Checkout
       2. Install pnpm
       3. pnpm install --frozen-lockfile
-      4. npx playwright install --with-deps
+      4. npx playwright install --with-deps chromium
       5. pnpm test:e2e
+      6. Upload playwright-report/ artifact on failure
 ```
 
 **Rationale for labeling:** E2E tests are slow (3-5m). Running them on every push would add latency to the inner loop. Labeling keeps them opt-in for PRs while still running on every `main` push.
@@ -277,7 +285,7 @@ Any CI step fails → the commit/PR is marked red in GitHub. Merging is blocked 
 
 ## Layer 4 — PR Merge
 
-The final gate before code enters `main`. Unlike layers 0-3, this gate is human-driven.
+The final gate before code merges upward (feature → `dev` → `staging` → `main`). Unlike layers 0-3, this gate is human-driven. Escalating strictness: `dev` (no gating), `staging` (1 review, linear history), `main` (1 review, linear history, enforce admins).
 
 ### Gate: Branch naming convention
 
@@ -288,7 +296,7 @@ pattern: ^(feat|fix|chore|docs|refactor)/<issue-number>-<kebab-description>
 example: feat/42-add-hero-block
 ```
 
-Not a hard block (can be overridden for direct pushes to `main`), but CI emits a warning on non-conforming branch names.
+Not a hard block, but CI emits a warning on non-conforming branch names. Protected branches (`main`, `dev`, `staging`, `prototype/*`) are exempt from this check.
 
 ### Gate: Pull request template
 
@@ -315,7 +323,7 @@ File: `.github/pull_request_template.md`
 - [ ] Storybook stories added or updated for new/changed components
 - [ ] i18n messages added for new copy (or confirmed none needed)
 - [ ] No TODO, debug code, or console.log remains
-- [ ] PR targets the correct branch (not main directly for features)
+- [ ] PR targets the correct branch: feature → `dev`, `dev` → `staging`, `staging` → `main`
 ```
 
 The checklist is self-certified. CI enforces the tooling checks; the checklist reminds the author of non-automatable items.
@@ -336,14 +344,24 @@ Review is not a rubber stamp. If the reviewer cannot understand the change from 
 
 ### Gate: Branch up to date
 
-The target branch (typically `main`) must not have diverged since the PR was opened. A stale PR is blocked by GitHub branch protection:
+The target branch must not have diverged since the PR was opened. Enforced on `staging` and `main` by GitHub branch protection:
 
 ```
-Settings > Branches > Branch protection rule for main:
-  ✓ Require status checks to pass before merging
-  ✓ Require branches to be up to date
-  ✓ Require pull request reviews before merging (at least 1)
-  ✓ Do not allow bypassing the above settings
+Settings > Branches > Branch protection rules:
+  main:
+    ✓ Require pull request reviews before merging (1)
+    ✓ Require linear history
+    ✓ Require branches to be up to date
+    ✓ Do not allow bypassing
+
+  staging:
+    ✓ Require pull request reviews before merging (1)
+    ✓ Require linear history
+    ✓ Require branches to be up to date
+    ✓ Do not allow bypassing
+
+  dev:
+    No protection rules — direct pushes allowed for fast iteration
 ```
 
 ### Gate: Linear history

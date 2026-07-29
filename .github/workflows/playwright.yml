@@ -2,46 +2,42 @@ name: Playwright E2E
 
 on:
   push:
-    branches: [main]
+    branches: [staging, main]
   pull_request:
-    types: [opened, synchronize, labeled, unlabeled]
+    types: [labeled, synchronize]
+    branches: [staging, main]
 
 jobs:
   e2e:
-    name: E2E Tests
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-
-    # Run on push to main, or on PR when the e2e label is set
-    if: |
-      github.event_name == 'push' ||
+    if: >
       contains(github.event.pull_request.labels.*.name, 'e2e')
+      || github.ref == 'refs/heads/staging'
+      || github.ref == 'refs/heads/main'
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           cache: pnpm
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - run: pnpm install --frozen-lockfile
 
       - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps
+        run: npx playwright install --with-deps chromium
 
       - name: Run E2E tests
         run: pnpm test:e2e
 
-      - name: Upload report
+      - uses: actions/upload-artifact@v4
         if: failure()
-        uses: actions/upload-artifact@v4
         with:
           name: playwright-report
           path: playwright-report/

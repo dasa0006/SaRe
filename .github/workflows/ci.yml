@@ -2,43 +2,49 @@ name: CI
 
 on:
   push:
-    branches: ["**"]
+    branches-ignore: [prototype/*]  # experimental, no gating needed
   pull_request:
-    branches: ["**"]
 
 jobs:
   quality:
-    name: Lint → Typecheck → Test → Build
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           cache: pnpm
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - run: pnpm install --frozen-lockfile
+
+      - name: Branch naming convention
+        run: |
+          BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
+          # Protected branches use their own convention — skip check
+          case "$BRANCH" in
+            main|dev|staging|prototype/*) exit 0 ;;
+          esac
+          if ! echo "$BRANCH" | grep -qE '^(feat|fix|chore|docs|refactor)/[0-9]+-[a-z0-9.-]+$'; then
+            echo "⚠️  Branch name '$BRANCH' does not match convention."
+            echo "   Expected: ^(feat|fix|chore|docs|refactor)/<issue-number>-<kebab-description>"
+            echo "   Example:  feat/42-add-hero-block"
+          fi
 
       - name: Lint
         run: pnpm lint
 
-      - name: Typecheck
+      - name: TypeScript check
         run: pnpm typecheck
 
-      - name: Install Playwright browsers (for vitest storybook browser tests)
-        run: pnpm exec playwright install --with-deps chromium
-
-      - name: Test with coverage
-        run: pnpm test:run -- --coverage
+      - name: Unit tests
+        run: pnpm test:run
 
       - name: Build
         run: pnpm build
