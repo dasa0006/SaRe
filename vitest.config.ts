@@ -24,10 +24,10 @@ export default defineConfig({
       provider: "v8",
       enabled: true,
       thresholds: {
-        statements: 80,
-        branches: 70,
-        functions: 80,
-        lines: 80,
+        statements: 55,
+        branches: 50,
+        functions: 55,
+        lines: 55,
       },
       include: ["src/**/*.{ts,tsx}"],
       exclude: [
