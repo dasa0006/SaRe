@@ -27,46 +27,6 @@
     "section2Heading": "Our Mission",
     "section2Body": "We empower marketing teams to build beautiful, high-performance websites without compromising on developer experience or accessibility.\n\nOur platform combines the best of modern web technologies with an intuitive component architecture that anyone on the team can contribute to."
   },
-  "Hero": {
-    "heading": "Build Better Marketing Sites",
-    "subtitle": "A production-grade Next.js starter with i18n, theming, and block-based composable pages.",
-    "primaryCTA": "Get Started",
-    "secondaryCTA": "Learn More"
-  },
-  "FeatureGrid": {
-    "heading": "Everything You Need",
-    "description": "Production-grade features to build and scale your marketing site.",
-    "lightning": {
-      "heading": "Lightning Fast",
-      "description": "Built on Next.js for optimal performance with automatic code splitting and edge caching."
-    },
-    "secure": {
-      "heading": "Secure by Default",
-      "description": "Enterprise-grade security with CSP headers, proper CORS configuration, and input validation."
-    },
-    "globe": {
-      "heading": "International Ready",
-      "description": "Full i18n support with next-intl for routing, translations, and locale detection out of the box."
-    },
-    "analytics": {
-      "heading": "Analytics Ready",
-      "description": "Event tracking infrastructure built in. Drop in your analytics provider with zero friction."
-    },
-    "team": {
-      "heading": "Team Friendly",
-      "description": "Consistent code patterns, co-located files, and strong conventions make collaboration easy."
-    },
-    "notifications": {
-      "heading": "Notification System",
-      "description": "Toast notifications and banner alerts with action callbacks and auto-dismiss timing."
-    }
-  },
-  "CTA": {
-    "heading": "Ready to Get Started?",
-    "description": "Join thousands of teams building better marketing sites with our starter template.",
-    "primaryCTA": "Get Started",
-    "secondaryCTA": "Contact Sales"
-  },
   "Metadata": {
     "home": {
       "title": "Marketing Starter",

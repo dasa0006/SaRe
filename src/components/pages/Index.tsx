@@ -1,18 +1,19 @@
 "use client";
 
-import { Section } from "../layout/section/Section";
-import WipGraphic from "../project-components/wip-graphic/WipGraphic";
+import { Section } from "@/components/layout/section/Section";
+import WipGraphic from "@/components/project-components/wip-graphic/WipGraphic";
 
 /**
  * Index page composition component.
  *
- * Combines Hero, FeatureGrid, and CTA blocks to form the landing page.
- * Messages are read from the `Hero`, `FeatureGrid`, and `CTA` namespaces.
+ * Renders a full-page WipGraphic as an under-development indicator
+ * for the landing page. The WipGraphic displays the brand name in
+ * varied typographic treatments.
  */
 export default function Index() {
   return (
     <>
-      <Section>
+      <Section surface="white">
         <WipGraphic />
       </Section>
     </>

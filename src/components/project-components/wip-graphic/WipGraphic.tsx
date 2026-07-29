@@ -2,8 +2,10 @@
 
 import { twMerge } from "tailwind-merge";
 
+import { SITE_CONFIG } from "@/lib/config/site";
+
 const WipGraphic = () => {
-  const brandName = "SaRe";
+  const brandName = SITE_CONFIG.name;
   const commonStyle =
     "text-9xl tracking-tighter hover:opacity-20 select-all cursor-pointer";
 
@@ -19,25 +21,14 @@ const WipGraphic = () => {
     { styles: ["font-light", "line-through", "opacity-60"] },
     { styles: ["text-5xl", "font-extralight", "underline", "decoration-wavy"] },
     { styles: ["skew-x-12"] },
-    { styles: ["italic"] },
-    { styles: ["font-bold", "indent-8"] },
     { styles: ["font-extrabold", "italic", "py-5"] },
-    { styles: ["font-extralight", "tracking-wide", "indent-7"] },
     { styles: ["font-extralight", "italic"] },
     { styles: ["font-serif", "underline", "decoration-1", "skew-2"] },
     { styles: ["font-mono", "tracking-widest", "text-shadow-lg"] },
     { styles: ["text-3xl", "font-light", "line-through", "opacity-60"] },
     { styles: ["font-extralight", "underline", "decoration-wavy"] },
-    { styles: [] },
-    { styles: ["italic"] },
     { styles: ["font-bold", "indent-8", "bg-amber-200"] },
-    { styles: ["font-extrabold", "italic"] },
-    { styles: ["font-extralight", "tracking-wide", "indent-7"] },
     { styles: ["font-extralight", "italic", "skew-x-12"] },
-    { styles: ["font-serif", "underline", "decoration-1"] },
-    { styles: ["font-mono", "tracking-widest", "text-shadow-lg"] },
-    { styles: ["font-light", "line-through", "opacity-60"] },
-    { styles: ["font-extralight", "underline", "decoration-wavy"] },
   ];
 
   const renderItems = (keyPrefix: string) =>
