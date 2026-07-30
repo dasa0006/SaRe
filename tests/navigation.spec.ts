@@ -15,7 +15,8 @@ test.describe("Navigation", () => {
     await aboutLink.click();
 
     // Verify navigation succeeded — URL shows the About page
-    await expect(page).toHaveURL("/en/about");
+    // (default locale "en" uses as-needed prefix, so URL is /about not /en/about)
+    await expect(page).toHaveURL(/\/about(?:\/|$)/);
 
     // Verify page content is rendered (WipGraphic interim placeholder shows the brand name)
     await expect(page.getByText("SaRe")).toBeVisible();
