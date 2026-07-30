@@ -1,10 +1,19 @@
-import { ABOUT, PRIVACY, COOKIE_POLICY } from "@/lib/config/routes";
+import {
+  ABOUT,
+  SERVICES,
+  CONTACT,
+  PRIVACY,
+  COOKIE_POLICY,
+} from "@/lib/config/routes";
 
 // ── Types ─────────────────────────────────────────────────────────
 
 export interface NavLink {
+  /** Display label (used as fallback and for analytics). */
   label: string;
   href: string;
+  /** Optional key for i18n translation under the `SiteHeader.nav` namespace. */
+  i18nKey?: string;
 }
 
 export interface HeaderCTA {
@@ -25,13 +34,15 @@ export type Surface = "white" | "subtle" | "dark" | "accent";
 // ── Navigation data ───────────────────────────────────────────────
 
 export const mainNavLinks: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: ABOUT },
+  { label: "Home", i18nKey: "home", href: "/" },
+  { label: "Services", i18nKey: "services", href: SERVICES },
+  { label: "About", i18nKey: "about", href: ABOUT },
+  { label: "Contact", i18nKey: "contact", href: CONTACT },
 ];
 
 export const headerCTAs: HeaderCTA[] = [];
 
 export const legalLinks: NavLink[] = [
-  { label: "Privacy Policy", href: PRIVACY },
-  { label: "Cookie Policy", href: COOKIE_POLICY },
+  { label: "Privacy Policy", i18nKey: "privacy", href: PRIVACY },
+  { label: "Cookie Policy", i18nKey: "cookiePolicy", href: COOKIE_POLICY },
 ];

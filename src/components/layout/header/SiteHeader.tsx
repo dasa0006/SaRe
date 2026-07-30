@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { Menu } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Brand } from "@/components/ui/Brand";
 import { Button } from "@/components/ui/button/Button";
@@ -27,6 +28,7 @@ export function SiteHeader({
 }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const tNav = useTranslations("SiteHeader.nav");
 
   // ── Scroll-based background transition ─────────────────────────
 
@@ -92,7 +94,7 @@ export function SiteHeader({
                 className="site-header-nav-link"
                 onClick={() => handleNavLinkClick(link)}
               >
-                {link.label}
+                {link.i18nKey ? tNav(link.i18nKey) : link.label}
               </a>
             ))}
           </nav>

@@ -30,7 +30,6 @@ vi.mock("next-intl", async (importOriginal) => {
   return {
     ...actual,
     useLocale: () => "en",
-    useTranslations: () => (key: string) => key,
   };
 });
 
@@ -44,8 +43,9 @@ vi.mock("@/i18n/navigation", () => ({
 
 // Load messages
 import baseEn from "@/../messages/base/en.json";
+import customEn from "@/../messages/custom/en.json";
 
-const messages = { ...baseEn };
+const messages = { ...baseEn, ...customEn };
 
 function renderWithProviders(ui: React.ReactElement) {
   return render(

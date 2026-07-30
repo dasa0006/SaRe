@@ -4,12 +4,12 @@ import { Section } from "@/components/layout/section/Section";
 import WipGraphic from "@/components/project-components/wip-graphic/WipGraphic";
 
 /**
- * About page composition component.
+ * Contact page composition component.
  *
  * Renders a full-page WipGraphic as an under-development indicator
- * for the about page.
+ * for the contact page.
  */
-export default function About() {
+export default function Contact() {
   return (
     <>
       <Section surface="white">
