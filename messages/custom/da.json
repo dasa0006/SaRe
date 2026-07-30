@@ -2,7 +2,9 @@
   "SiteHeader": {
     "nav": {
       "home": "Forside",
+      "services": "Services",
       "about": "Om",
+      "contact": "Kontakt",
       "privacy": "Privatliv",
       "cookiePolicy": "Cookiepolitik"
     },
@@ -19,22 +21,30 @@
     "title": "Velkommen",
     "description": "Dette er forsiden."
   },
-  "AboutPage": {
-    "title": "Om os",
-    "description": "Lær mere om vores virksomhed.",
-    "section1Heading": "Vores historie",
-    "section1Body": "Grundlagt med en passion for gode weboplevelser, satte vi os for at bygge det bedst mulige fundament for marketingssider.\n\nVores team kombinerer dyb ekspertise inden for designsystemer, præstationsoptimering og developer experience for at skabe en starter, som teams elsker at bruge.",
-    "section2Heading": "Vores mission",
-    "section2Body": "Vi giver marketingteams mulighed for at bygge smukke, højtydende hjemmesider uden at gå på kompromis med developer experience eller tilgængelighed.\n\nVores platform kombinerer de bedste moderne webteknologier med en intuitiv komponentarkitektur, som alle på teamet kan bidrage til."
+  "ServicesPage": {
+    "title": "Vores services",
+    "description": "Opdag de tjenester, vi tilbyder for at hjælpe dig med at bygge bedre marketingssider."
+  },
+  "ContactPage": {
+    "title": "Kontakt os",
+    "description": "Kontakt vores team for spørgsmål og support."
   },
   "Metadata": {
     "home": {
       "title": "Marketing Starter",
       "description": "En produktionsklar Next.js marketingside skabelon."
     },
+    "services": {
+      "title": "Services | Marketing Starter",
+      "description": "Opdag de tjenester, vi tilbyder for at hjælpe dig med at bygge bedre marketingssider."
+    },
     "about": {
       "title": "Om os | Marketing Starter",
       "description": "Lær mere om vores virksomhed og hvad vi laver."
+    },
+    "contact": {
+      "title": "Kontakt os | Marketing Starter",
+      "description": "Kontakt vores team for spørgsmål og support."
     },
     "privacy": {
       "title": "Privatlivspolitik | Marketing Starter",

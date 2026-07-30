@@ -2,7 +2,9 @@
   "SiteHeader": {
     "nav": {
       "home": "Home",
+      "services": "Services",
       "about": "About",
+      "contact": "Contact",
       "privacy": "Privacy",
       "cookiePolicy": "Cookie Policy"
     },
@@ -19,22 +21,30 @@
     "title": "Welcome",
     "description": "This is the home page."
   },
-  "AboutPage": {
-    "title": "About Us",
-    "description": "Learn more about our company.",
-    "section1Heading": "Our Story",
-    "section1Body": "Founded with a passion for great web experiences, we set out to build the best possible foundation for marketing sites.\n\nOur team combines deep expertise in design systems, performance optimization, and developer experience to create a starter that teams love to use.",
-    "section2Heading": "Our Mission",
-    "section2Body": "We empower marketing teams to build beautiful, high-performance websites without compromising on developer experience or accessibility.\n\nOur platform combines the best of modern web technologies with an intuitive component architecture that anyone on the team can contribute to."
+  "ServicesPage": {
+    "title": "Our Services",
+    "description": "Discover the services we offer to help you build better marketing sites."
+  },
+  "ContactPage": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team for inquiries and support."
   },
   "Metadata": {
     "home": {
       "title": "Marketing Starter",
       "description": "A production-grade Next.js marketing site template."
     },
+    "services": {
+      "title": "Services | Marketing Starter",
+      "description": "Discover the services we offer to help you build better marketing sites."
+    },
     "about": {
       "title": "About Us | Marketing Starter",
       "description": "Learn more about our company and what we do."
+    },
+    "contact": {
+      "title": "Contact Us | Marketing Starter",
+      "description": "Get in touch with our team for inquiries and support."
     },
     "privacy": {
       "title": "Privacy Policy | Marketing Starter",

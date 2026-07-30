@@ -1,4 +1,10 @@
-import { ABOUT, PRIVACY, COOKIE_POLICY } from "@/lib/config/routes";
+import {
+  ABOUT,
+  SERVICES,
+  CONTACT,
+  PRIVACY,
+  COOKIE_POLICY,
+} from "@/lib/config/routes";
 
 // ── Types ─────────────────────────────────────────────────────────
 
@@ -26,7 +32,9 @@ export type Surface = "white" | "subtle" | "dark" | "accent";
 
 export const mainNavLinks: NavLink[] = [
   { label: "Home", href: "/" },
+  { label: "Services", href: SERVICES },
   { label: "About", href: ABOUT },
+  { label: "Contact", href: CONTACT },
 ];
 
 export const headerCTAs: HeaderCTA[] = [];
