@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef } from "react";
 import { X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { useScrollLock } from "@/hooks/useScrollLock";
@@ -34,6 +35,8 @@ export function MobileDrawer({
   className,
 }: MobileDrawerProps) {
   const drawerRef = useRef<HTMLDivElement | null>(null);
+
+  const tNav = useTranslations("SiteHeader.nav");
 
   useFocusTrap(drawerRef, open, onClose);
   useScrollLock(open);
@@ -106,7 +109,7 @@ export function MobileDrawer({
               className="mobile-drawer-nav-link"
               onClick={() => handleNavLinkClick(link)}
             >
-              {link.label}
+              {link.i18nKey ? tNav(link.i18nKey) : link.label}
             </a>
           ))}
         </nav>

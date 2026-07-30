@@ -40,6 +40,7 @@ export function SiteFooter({
   ...props
 }: SiteFooterProps) {
   const t = useTranslations("SiteFooter");
+  const tNav = useTranslations("SiteHeader.nav");
   const year = new Date().getFullYear();
 
   return (
@@ -59,7 +60,7 @@ export function SiteFooter({
               {mainNavLinks.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="site-footer-link">
-                    {link.label}
+                    {link.i18nKey ? tNav(link.i18nKey) : link.label}
                   </a>
                 </li>
               ))}
@@ -75,7 +76,7 @@ export function SiteFooter({
               {legalLinks.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="site-footer-link">
-                    {link.label}
+                    {link.i18nKey ? tNav(link.i18nKey) : link.label}
                   </a>
                 </li>
               ))}
