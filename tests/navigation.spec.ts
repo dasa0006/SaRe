@@ -14,12 +14,10 @@ test.describe("Navigation", () => {
       .getByRole("link", { name: "About" });
     await aboutLink.click();
 
-    // Verify page content — "Our Story" and "Our Mission" sections are rendered
-    await expect(
-      page.getByRole("heading", { name: "Our Story" })
-    ).toBeVisible();
-    await expect(
-      page.getByRole("heading", { name: "Our Mission" })
-    ).toBeVisible();
+    // Verify navigation succeeded — URL shows the About page
+    await expect(page).toHaveURL("/en/about");
+
+    // Verify page content is rendered (WipGraphic interim placeholder shows the brand name)
+    await expect(page.getByText("SaRe")).toBeVisible();
   });
 });
