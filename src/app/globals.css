@@ -20,6 +20,7 @@
 @import "../components/blocks/feature-grid/FeatureGrid.css";
 @import "../components/blocks/cta/CTA.css";
 @import "../components/blocks/text-block/TextBlock.css";
+@import "../components/blocks/trust-signals/TrustSignals.css";
 
 /* Project Component CSS files */
 @import "../components/project-components/wip-graphic/WipGraphic.css";

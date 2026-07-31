@@ -1,0 +1,58 @@
+@layer components {
+  .trust-signals {
+    width: 100%;
+  }
+
+  /* ── Surface-aware text ────────────────────────────────────────── */
+  .trust-signals .heading,
+  .trust-signals .text-default {
+    color: inherit;
+  }
+
+  /* ── Layout ───────────────────────────────────────────────────── */
+  .trust-signals-heading {
+    margin: 0;
+  }
+
+  .trust-signals-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem 4rem;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .trust-signals-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
+  }
+
+  .trust-signals-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .trust-signals-logo {
+    height: 2rem;
+    width: auto;
+  }
+
+  .trust-signals-descriptor {
+    opacity: 0.65;
+  }
+
+  /* Keep descriptors readable (AA contrast) on dark/accent surfaces, where
+   * muting the inherited light text would fall below 4.5:1. */
+  .trust-signals[data-surface="dark"] .trust-signals-descriptor,
+  .trust-signals[data-surface="accent"] .trust-signals-descriptor {
+    opacity: 1;
+  }
+}
