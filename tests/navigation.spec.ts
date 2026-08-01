@@ -18,7 +18,11 @@ test.describe("Navigation", () => {
     // (default locale "en" uses as-needed prefix, so URL is /about not /en/about)
     await expect(page).toHaveURL(/\/about(?:\/|$)/);
 
-    // Verify page content is rendered (WipGraphic interim placeholder shows the brand name)
-    await expect(page.getByText("SaRe")).toBeVisible();
+    // Verify page content is rendered (WipGraphic interim placeholder shows the brand name).
+    // The placeholder renders the brand name many times, so scope to the main region and
+    // assert on a single element to avoid a strict-mode violation.
+    await expect(
+      page.getByRole("main").getByText("SaRe").first()
+    ).toBeVisible();
   });
 });
