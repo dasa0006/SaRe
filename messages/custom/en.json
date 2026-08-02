@@ -18,8 +18,49 @@
     "socialHeading": "Social"
   },
   "HomePage": {
-    "title": "Welcome",
-    "description": "This is the home page."
+    "title": "Home",
+    "description": "A small Copenhagen development duo that builds, modernises and maintains websites for businesses you can work with directly."
+  },
+  "Hero": {
+    "heading": "Work directly with the owners.",
+    "subtitle": "We are SaRe — a small duo of website developers based in Copenhagen. No account managers, no middlemen. When you hire us, you work straight with the people who build your website.",
+    "primaryCTA": "Explore our services",
+    "secondaryCTA": "Get in touch"
+  },
+  "TrustSignals": {
+    "heading": "Trusted by",
+    "clients": [
+      {
+        "name": "Improve Invest",
+        "descriptor": "A Real Estate Fund"
+      },
+      {
+        "name": "Tani Mous Studios",
+        "descriptor": "A digital marketing agency"
+      }
+    ]
+  },
+  "ServicesPreview": {
+    "heading": "How we can help",
+    "services": [
+      {
+        "problem": "You have a good idea, but no website to show for it.",
+        "solution": "We design and build a website from scratch — clean, fast and yours to keep."
+      },
+      {
+        "problem": "Your current website is slow, dated and hard to update.",
+        "solution": "We modernise it without losing what already works."
+      },
+      {
+        "problem": "A website is never really finished on launch day.",
+        "solution": "We keep yours healthy, secure and up to date with an ongoing plan."
+      }
+    ]
+  },
+  "CTA": {
+    "heading": "Ready to work directly with the owners?",
+    "primaryCTA": "Explore our services",
+    "secondaryCTA": "Get in touch"
   },
   "ServicesPage": {
     "title": "Our Services",
@@ -31,8 +72,8 @@
   },
   "Metadata": {
     "home": {
-      "title": "Marketing Starter",
-      "description": "A production-grade Next.js marketing site template."
+      "title": "Home",
+      "description": "SaRe builds, modernises and maintains websites. A small Copenhagen duo — you work directly with the owners."
     },
     "services": {
       "title": "Services | Marketing Starter",
