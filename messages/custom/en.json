@@ -32,9 +32,12 @@
     "clients": [
       {
         "name": "Improve Invest",
-        "descriptor": "A developing investment team"
+        "descriptor": "A Real Estate Fund"
       },
-      { "name": "Tani Mous Studios", "descriptor": "A digital agency" }
+      {
+        "name": "Tani Mous Studios",
+        "descriptor": "A digital marketing agency"
+      }
     ]
   },
   "ServicesPreview": {
