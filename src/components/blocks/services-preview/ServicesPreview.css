@@ -1,0 +1,107 @@
+@layer components {
+  .services-preview {
+    width: 100%;
+  }
+
+  /* ── Surface-aware text ────────────────────────────────────────── */
+  .services-preview .heading,
+  .services-preview .text-default {
+    color: inherit;
+  }
+
+  .services-preview-heading {
+    margin: 0;
+  }
+
+  .services-preview-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2.5rem 0 0;
+  }
+
+  .services-preview-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+  }
+
+  @media (min-width: 768px) {
+    .services-preview-item {
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      padding: 2rem;
+    }
+  }
+
+  /* On desktop, alternate the icon tile to the right of even items. */
+  @media (min-width: 768px) {
+    .services-preview-item-flip .services-preview-icon {
+      order: 2;
+    }
+  }
+
+  .services-preview-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: var(--radius-lg);
+    background-color: color-mix(in srgb, currentColor 10%, transparent);
+  }
+
+  .services-preview-icon-glyph {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .services-preview-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .services-preview-problem {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .services-preview-answer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1.25rem;
+  }
+
+  .services-preview-solution {
+    margin: 0;
+  }
+
+  .services-preview-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .services-preview-link:hover {
+    text-decoration: underline;
+  }
+
+  .services-preview-link-arrow {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.15s ease;
+  }
+
+  .services-preview-link:hover .services-preview-link-arrow {
+    transform: translateX(0.25rem);
+  }
+}
