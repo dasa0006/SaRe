@@ -28,6 +28,7 @@ const mockServices: ServiceTeaser[] = [
 
 export const mockServicesPreviewProps: ServicesPreviewProps = {
   heading: "How we can help",
+  linkLabel: "See how",
   services: mockServices,
   surface: "white",
 };

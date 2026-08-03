@@ -18,6 +18,8 @@ export interface ServicesPreviewProps {
   className?: string;
   /** Heading above the service teasers, e.g. "How we can help". */
   heading: string;
+  /** The link label shown on each teaser, e.g. "See how". */
+  linkLabel: string;
   /** The featured services (intended to be 3). */
   services: ServiceTeaser[];
   /** The background surface this block sits on, for Section context. */

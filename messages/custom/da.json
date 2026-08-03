@@ -32,7 +32,7 @@
     "clients": [
       {
         "name": "Improve Invest",
-        "descriptor": "En ejendomsinvesteringsfond"
+        "descriptor": "Ejendomsudviklingsfond med fokus på Transformation"
       },
       {
         "name": "Tani Mous Studios",
@@ -42,6 +42,7 @@
   },
   "ServicesPreview": {
     "heading": "Sådan kan vi hjælpe",
+    "link": "Se hvordan",
     "services": [
       {
         "problem": "Du har en god idé, men ingen hjemmeside at vise den frem på.",

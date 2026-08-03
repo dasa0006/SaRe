@@ -32,16 +32,17 @@
     "clients": [
       {
         "name": "Improve Invest",
-        "descriptor": "A Real Estate Fund"
+        "descriptor": "Adaptive Reuse & Value-Add Property Fund"
       },
       {
         "name": "Tani Mous Studios",
-        "descriptor": "A digital marketing agency"
+        "descriptor": "A Digital Marketing Agency"
       }
     ]
   },
   "ServicesPreview": {
     "heading": "How we can help",
+    "link": "See how",
     "services": [
       {
         "problem": "You have a good idea, but no website to show for it.",
