@@ -127,9 +127,11 @@ describe("Index page composition", () => {
     renderIndex("en");
 
     expect(screen.getByText("Improve Invest")).toBeInTheDocument();
-    expect(screen.getByText("A Real Estate Fund")).toBeInTheDocument();
+    expect(
+      screen.getByText("Adaptive Reuse & Value-Add Property Fund")
+    ).toBeInTheDocument();
     expect(screen.getByText("Tani Mous Studios")).toBeInTheDocument();
-    expect(screen.getByText("A digital marketing agency")).toBeInTheDocument();
+    expect(screen.getByText("A Digital Marketing Agency")).toBeInTheDocument();
   });
 
   it("renders three ServicesPreview teasers, each linking to Services", () => {
