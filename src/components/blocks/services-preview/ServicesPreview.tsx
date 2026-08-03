@@ -21,6 +21,7 @@ import type { ServicesPreviewProps } from "./ServicesPreview.types";
 export function ServicesPreview({
   className,
   heading,
+  linkLabel,
   services,
   surface = "white",
 }: ServicesPreviewProps) {
@@ -56,7 +57,7 @@ export function ServicesPreview({
                     {service.solution}
                   </p>
                   <Link href={service.link} className="services-preview-link">
-                    See how
+                    {linkLabel}
                     <ArrowRight
                       className="services-preview-link-arrow"
                       aria-hidden="true"
