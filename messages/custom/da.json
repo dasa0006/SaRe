@@ -18,8 +18,50 @@
     "socialHeading": "Social"
   },
   "HomePage": {
-    "title": "Velkommen",
-    "description": "Dette er forsiden."
+    "title": "Forside",
+    "description": "Et lille københavnsk udviklerduo, der bygger, moderniserer og vedligeholder hjemmesider for virksomheder, du kan samarbejde direkte med."
+  },
+  "Hero": {
+    "heading": "Du arbejder direkte med ejerne.",
+    "subtitle": "Vi er SaRe – et lille udviklerteam med base i København. Ingen project managers, ingen mellemmænd. Når du hyrer os, arbejder du direkte med dem, der bygger din hjemmeside.",
+    "primaryCTA": "Se vores services",
+    "secondaryCTA": "Kontakt os"
+  },
+  "TrustSignals": {
+    "heading": "Samarbejdspartnere",
+    "clients": [
+      {
+        "name": "Improve Invest",
+        "descriptor": "Ejendomsudviklingsfond med fokus på Transformation"
+      },
+      {
+        "name": "Tani Mous Studios",
+        "descriptor": "Et digitalt marketingbureau"
+      }
+    ]
+  },
+  "ServicesPreview": {
+    "heading": "Sådan kan vi hjælpe",
+    "link": "Se hvordan",
+    "services": [
+      {
+        "problem": "Du har en god idé, men ingen hjemmeside at vise den frem på.",
+        "solution": "Vi designer og bygger en hjemmeside fra bunden – ren, hurtig og helt din egen."
+      },
+      {
+        "problem": "Din nuværende hjemmeside er langsom, forældet og svær at opdatere.",
+        "solution": "Vi moderniserer den uden at miste det, der allerede virker."
+      },
+      {
+        "problem": "En hjemmeside er sjældent færdig på lanceringsdagen.",
+        "solution": "Vi holder din sund, sikker og opdateret med en løbende plan."
+      }
+    ]
+  },
+  "CTA": {
+    "heading": "Klar til at arbejde direkte med ejerne?",
+    "primaryCTA": "Se vores services",
+    "secondaryCTA": "Kontakt os"
   },
   "ServicesPage": {
     "title": "Vores services",
@@ -31,8 +73,8 @@
   },
   "Metadata": {
     "home": {
-      "title": "Marketing Starter",
-      "description": "En produktionsklar Next.js marketingside skabelon."
+      "title": "Forside",
+      "description": "SaRe bygger, moderniserer og vedligeholder hjemmesider. Et lille københavnsk team – du arbejder direkte med ejerne."
     },
     "services": {
       "title": "Services | Marketing Starter",
