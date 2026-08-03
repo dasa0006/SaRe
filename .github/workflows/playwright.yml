@@ -14,7 +14,7 @@ jobs:
       || github.event.pull_request.base.ref == 'main'
       || github.ref == 'refs/heads/staging'
       || github.ref == 'refs/heads/main'
-    timeout-minutes: 20
+    timeout-minutes: 45
     runs-on: ubuntu-latest
 
     steps:
@@ -28,6 +28,13 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
+
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps
