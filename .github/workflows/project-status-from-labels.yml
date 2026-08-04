@@ -1,0 +1,146 @@
+name: Project status from labels
+
+# Labels are the source of truth. This workflow mirrors the `status:*` label
+# onto the "SaRe website" project board (https://github.com/users/dasa0006/projects/8)
+# so the board is always a derived view and never drifts.
+#
+# Requires a classic PAT with `project` scope stored in repo secret PROJECT_PAT
+# (fine-grained PATs cannot write to user-owned Projects v2).
+
+on:
+  issues:
+    types: [labeled, unlabeled, reopened, closed]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PROJECT_PAT }}
+          script: |
+            const OWNER = "dasa0006";
+            const PROJECT_NUMBER = 8;
+            const STATUS_FIELD = "Status";
+
+            const labelToStatus = {
+              "status:backlog": "Backlog",
+              "status:ready": "Ready",
+              "status:in-progress": "In progress",
+              "status:in-review": "In review",
+              "status:done": "Done",
+            };
+
+            async function projectRefs() {
+              const { user } = await github.graphql(
+                `query($owner: String!, $number: Int!, $field: String!) {
+                  user(login: $owner) {
+                    projectV2(number: $number) {
+                      id
+                      field(name: $field) {
+                        ... on ProjectV2SingleSelectField {
+                          id
+                          options { name id }
+                        }
+                      }
+                    }
+                  }
+                }`,
+                { owner: OWNER, number: PROJECT_NUMBER, field: STATUS_FIELD },
+              );
+              const project = user.projectV2;
+              const field = project.field;
+              return { projectId: project.id, fieldId: field.id, options: field.options };
+            }
+
+            function optionId(options, name) {
+              const opt = options.find((o) => o.name === name);
+              if (!opt) throw new Error(`No Status option "${name}" on project #${PROJECT_NUMBER}`);
+              return opt.id;
+            }
+
+            async function findItem(issueNodeId) {
+              const { node } = await github.graphql(
+                `query($id: ID!) {
+                  node(id: $id) {
+                    ... on Issue {
+                      projectItems(first: 10) {
+                        nodes {
+                          id
+                          project { number }
+                        }
+                      }
+                    }
+                  }
+                }`,
+                { id: issueNodeId },
+              );
+              return node.projectItems.nodes.find((n) => n.project.number === PROJECT_NUMBER);
+            }
+
+            async function ensureItem(issueNodeId, projectId) {
+              const existing = await findItem(issueNodeId);
+              if (existing) return existing.id;
+              const { addProjectV2ItemById } = await github.graphql(
+                `mutation($project: ID!, $content: ID!) {
+                  addProjectV2ItemById(input: { projectId: $project, contentId: $content }) {
+                    item { id }
+                  }
+                }`,
+                { project: projectId, content: issueNodeId },
+              );
+              return addProjectV2ItemById.item.id;
+            }
+
+            async function setStatus(issueNodeId, statusName, { projectId, fieldId, options }) {
+              const itemId = await ensureItem(issueNodeId, projectId);
+              const statusId = optionId(options, statusName);
+              await github.graphql(
+                `mutation($project: ID!, $item: ID!, $field: ID!, $value: String!) {
+                  updateProjectV2ItemFieldValue(input: {
+                    projectId: $project
+                    itemId: $item
+                    fieldId: $field
+                    value: { singleSelectOptionId: $value }
+                  }) {
+                    projectV2Item { id }
+                  }
+                }`,
+                { project: projectId, item: itemId, field: fieldId, value: statusId },
+              );
+              core.info(`#${issueNodeId} -> Status "${statusName}"`);
+            }
+
+            function statusFor(labels, closed) {
+              if (closed) return "Done";
+              for (const l of labels) {
+                if (labelToStatus[l]) return labelToStatus[l];
+              }
+              return "Backlog";
+            }
+
+            const refs = await projectRefs();
+
+            if (context.eventName === "workflow_dispatch") {
+              core.info("Manual reconcile: scanning all open issues");
+              const { data: issues } = await github.rest.issues.listForRepo({
+                owner: OWNER,
+                repo: context.repo.repo,
+                state: "open",
+                per_page: 100,
+              });
+              for (const issue of issues) {
+                if (issue.pull_request) continue;
+                const labels = issue.labels.map((l) => l.name);
+                await setStatus(issue.node_id, statusFor(labels, issue.state === "closed"), refs);
+              }
+              core.info("Reconcile complete");
+              return;
+            }
+
+            const issue = context.payload.issue;
+            if (!issue || issue.pull_request) return;
+            const labels = issue.labels.map((l) => l.name);
+            const target = statusFor(labels, issue.state === "closed");
+            await setStatus(issue.node_id, target, refs);
