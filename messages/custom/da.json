@@ -67,6 +67,20 @@
     "title": "Vores services",
     "description": "Opdag de tjenester, vi tilbyder for at hjælpe dig med at bygge bedre marketingssider."
   },
+  "WebDevelopmentLead": {
+    "eyebrow": "Webudvikling",
+    "heading": "En hjemmeside, din virksomhed kan være stolt af.",
+    "problem": "Du har en god idé — men ingen hjemmeside at vise den frem på, eller den du har, gør dig ikke retfærdighed.",
+    "features": [
+      "Bygget fra bunden, ingen skabeloner",
+      "Hurtig, sikker og søgeklar",
+      "Let for dig at opdatere",
+      "Klare leverancer og tidsplaner"
+    ],
+    "price": "Fra 20.000 DKK",
+    "priceNote": "Startende fra",
+    "cta": "Start et projekt"
+  },
   "ContactPage": {
     "title": "Kontakt os",
     "description": "Kontakt vores team for spørgsmål og support."

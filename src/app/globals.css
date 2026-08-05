@@ -22,6 +22,7 @@
 @import "../components/blocks/text-block/TextBlock.css";
 @import "../components/blocks/trust-signals/TrustSignals.css";
 @import "../components/blocks/services-preview/ServicesPreview.css";
+@import "../components/blocks/web-development-lead/WebDevelopmentLead.css";
 
 /* Project Component CSS files */
 @import "../components/project-components/wip-graphic/WipGraphic.css";

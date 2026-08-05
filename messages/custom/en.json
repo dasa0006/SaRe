@@ -67,6 +67,20 @@
     "title": "Our Services",
     "description": "Discover the services we offer to help you build better marketing sites."
   },
+  "WebDevelopmentLead": {
+    "eyebrow": "Web development",
+    "heading": "A website your business can be proud of.",
+    "problem": "You have a good idea — but no website to show it off, or the one you have doesn't do you justice.",
+    "features": [
+      "Built from scratch, no templates",
+      "Fast, secure and search-ready",
+      "Easy for you to update",
+      "Clear deliverables and timelines"
+    ],
+    "price": "From 20,000 DKK",
+    "priceNote": "Starting from",
+    "cta": "Start a project"
+  },
   "ContactPage": {
     "title": "Contact Us",
     "description": "Get in touch with our team for inquiries and support."
