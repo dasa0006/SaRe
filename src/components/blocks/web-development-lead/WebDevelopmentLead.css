@@ -83,6 +83,15 @@
     font-variant-numeric: tabular-nums;
   }
 
+  /* Keep muted labels readable (AA contrast) on dark/accent surfaces, where
+   * muting the inherited light text would fall below 4.5:1. */
+  .web-development-lead[data-surface="dark"] .web-development-lead-eyebrow,
+  .web-development-lead[data-surface="dark"] .web-development-lead-card-note,
+  .web-development-lead[data-surface="accent"] .web-development-lead-eyebrow,
+  .web-development-lead[data-surface="accent"] .web-development-lead-card-note {
+    opacity: 1;
+  }
+
   .web-development-lead-features {
     display: flex;
     flex-direction: column;
