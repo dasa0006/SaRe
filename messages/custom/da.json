@@ -81,6 +81,55 @@
     "priceNote": "Startende fra",
     "cta": "Start et projekt"
   },
+  "StandardServices": {
+    "priceNote": "Startende fra",
+    "modernising": {
+      "eyebrow": "Modernisering",
+      "heading": "En frisk hjemmeside til en trÃ¦t website.",
+      "problem": "Din nuvÃ¦rende hjemmeside er langsom, forÃ¦ldet og svÃ¦r at opdatere â€“ og den koster dig stille og roligt besÃ¸gende.",
+      "features": [
+        "Hurtigere indlÃ¦sning pÃ¥ alle enheder",
+        "Et design, der ser nutidigt ud â€“ ikke trÃ¦t",
+        "Et redigeringssystem, du rent faktisk kan bruge",
+        "Ingen tabt SEO, placering eller indhold"
+      ],
+      "price": "12.000 DKK"
+    },
+    "responsiveness": {
+      "eyebrow": "Responsivt design",
+      "heading": "Flot pÃ¥ skÃ¦rmen. Perfekt pÃ¥ telefonen.",
+      "problem": "Din hjemmeside ser godt ud pÃ¥ computeren, men falder fra hinanden, sÃ¥ snart en kunde Ã¥bner den pÃ¥ telefonen.",
+      "features": [
+        "Perfekt pÃ¥ telefon, tablet og computer",
+        "Hurtigere sider pÃ¥ mobilforbindelser",
+        "Trykflader i en stÃ¸rrelse, man kan ramme",
+        "Testet pÃ¥ rigtige enheder â€“ ikke kun emulatorer"
+      ],
+      "price": "8.000 DKK"
+    },
+    "language": {
+      "eyebrow": "Sprogspecifik tekst",
+      "heading": "Sig det pÃ¥ kundens sprog.",
+      "problem": "Din danske hjemmeside taler engelsk til dine kunder â€“ eller din engelske Ã¸delÃ¦gger dansken. Det skader tilliden.",
+      "features": [
+        "IndfÃ¸dt, menneskelig oversÃ¦ttelse â€“ aldrig maskinoversat tekst",
+        "Konsekvent tone gennem hele siden",
+        "Korrekte lokale formater og konventioner",
+        "Begge sprog forbliver synkroniseret, mens du redigerer"
+      ],
+      "price": "5.000 DKK"
+    },
+    "excel": {
+      "eyebrow": "Excel-arbejdsbÃ¸ger",
+      "heading": "ArbejdsbÃ¸ger, der gÃ¸r arbejdet for dig.",
+      "problem": "Din virksomhed kÃ¸rer pÃ¥ Excel â€“ men arbejdsbÃ¸gerne er skrÃ¸belige, fejlbehÃ¦ftede og svÃ¦re at overdrage.",
+      "features": [
+        "Automatiserede, fejlfrie beregninger",
+        "Klar struktur, som enhver kan vedligeholde"
+      ],
+      "price": "6.000 DKK"
+    }
+  },
   "ContactPage": {
     "title": "Kontakt os",
     "description": "Kontakt vores team for spørgsmål og support."
