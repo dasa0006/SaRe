@@ -67,6 +67,69 @@
     "title": "Vores services",
     "description": "Opdag de tjenester, vi tilbyder for at hjælpe dig med at bygge bedre marketingssider."
   },
+  "WebDevelopmentLead": {
+    "eyebrow": "Webudvikling",
+    "heading": "En hjemmeside, din virksomhed kan være stolt af.",
+    "problem": "Du har en god idé — men ingen hjemmeside at vise den frem på, eller den du har, gør dig ikke retfærdighed.",
+    "features": [
+      "Bygget fra bunden, ingen skabeloner",
+      "Hurtig, sikker og søgeklar",
+      "Let for dig at opdatere",
+      "Klare leverancer og tidsplaner"
+    ],
+    "price": "Fra 20.000 DKK",
+    "priceNote": "Startende fra",
+    "cta": "Start et projekt"
+  },
+  "StandardServices": {
+    "priceNote": "Startende fra",
+    "modernising": {
+      "eyebrow": "Modernisering",
+      "heading": "En frisk hjemmeside til en træt website.",
+      "problem": "Din nuværende hjemmeside er langsom, forældet og svær at opdatere - og den koster dig stille og roligt besøgende.",
+      "features": [
+        "Hurtigere indlæsning på alle enheder",
+        "Et design, der ser nutidigt ud - ikke træt",
+        "Et redigeringssystem, du rent faktisk kan bruge",
+        "Ingen tabt SEO, placering eller indhold"
+      ],
+      "price": "12.000 DKK"
+    },
+    "responsiveness": {
+      "eyebrow": "Responsivt design",
+      "heading": "Flot på skærmen. Perfekt på telefonen.",
+      "problem": "Din hjemmeside ser godt ud på computeren, men falder fra hinanden, så snart en kunde åbner den på telefonen.",
+      "features": [
+        "Perfekt på telefon, tablet og computer",
+        "Hurtigere sider på mobilforbindelser",
+        "Trykflader i en størrelse, man kan ramme",
+        "Testet på rigtige enheder - ikke kun emulatorer"
+      ],
+      "price": "8.000 DKK"
+    },
+    "language": {
+      "eyebrow": "Sprogspecifik tekst",
+      "heading": "Sig det på kundens sprog.",
+      "problem": "Din danske hjemmeside taler engelsk til dine kunder — eller din engelske side slagter det danske sprog. Uanset hvad, koster det på tillidskontoen.",
+      "features": [
+        "Indfødt, menneskelig oversættelse - aldrig maskinoversat tekst",
+        "Konsekvent tone gennem hele siden",
+        "Korrekte lokale formater og konventioner",
+        "Begge sprog forbliver synkroniseret, mens du redigerer"
+      ],
+      "price": "5.000 DKK"
+    },
+    "excel": {
+      "eyebrow": "Excel-arbejdsbøger",
+      "heading": "Arbejdsbøger, der gør arbejdet for dig.",
+      "problem": "Din virksomhed kører på Excel - men arbejdsbøgerne er skrøbelige, fejlbehæftede og svære at overdrage.",
+      "features": [
+        "Automatiserede, fejlfrie beregninger",
+        "Klar struktur, som enhver kan vedligeholde"
+      ],
+      "price": "6.000 DKK"
+    }
+  },
   "ContactPage": {
     "title": "Kontakt os",
     "description": "Kontakt vores team for spørgsmål og support."
