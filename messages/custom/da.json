@@ -130,6 +130,23 @@
       "price": "6.000 DKK"
     }
   },
+  "AfterCare": {
+    "eyebrow": "Efterpleje",
+    "badge": "Abonnement",
+    "heading": "Din hjemmeside bliver aldrig rigtig færdig.",
+    "problem": "Lanceringsdagen er ikke slutningen. Ting ændrer sig — ny tekst, nye sider, nye idéer. Efterpleje er en løbende aftale, der holder din hjemmeside sund, sikker og hurtig — fra 350 kr. om måneden, med services du tilføjer, efterhånden som dine behov vokser.",
+    "features": [
+      "Sikkerhed — sårbarhedsscanning, patches og opdatering af afhængigheder (fra 350 kr./md.)",
+      "Support — fejlsøgning, akutte fixes og hjælp til deployment",
+      "Aktiv optimering — performance, struktur, design og brugeroplevelse",
+      "Indholdsændringer inden for din eksisterende struktur",
+      "Månedlig rapport — performance, sikkerhedsstatus og oppetid",
+      "Driftsovervågning med automatiske nedbrudsalarmer"
+    ],
+    "price": "Fra 350 kr.",
+    "priceNote": "per måned",
+    "cta": "Sammensæt dit eget abonnement"
+  },
   "ContactPage": {
     "title": "Kontakt os",
     "description": "Kontakt vores team for spørgsmål og support."
