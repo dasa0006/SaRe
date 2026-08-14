@@ -5,6 +5,7 @@ import { Section } from "@/components/layout/section/Section";
 import { StandardServices } from "@/components/blocks/standard-services/StandardServices";
 import type { StandardService } from "@/components/blocks/standard-services/StandardServices.types";
 import { WebDevelopmentLead } from "@/components/blocks/web-development-lead/WebDevelopmentLead";
+import { AfterCare } from "@/components/blocks/after-care/AfterCare";
 import { CONTACT } from "@/lib/config/routes";
 
 /**
@@ -15,10 +16,15 @@ import { CONTACT } from "@/lib/config/routes";
  * four standard service sections (issue #70): Modernising → Responsiveness →
  * Language copy → Excel. All copy is read from the `WebDevelopmentLead` and
  * `StandardServices` message namespaces, so it renders in both DA and EN.
+ *
+ * The after-care recurring-subscription tier (issue #73) closes the page as
+ * the final, visually distinct pricing card below the project services, per
+ * decision #7. Copy is read from the `AfterCare` namespace.
  */
 export default function Services() {
   const t = useTranslations("WebDevelopmentLead");
   const st = useTranslations("StandardServices");
+  const ac = useTranslations("AfterCare");
 
   const services: StandardService[] = [
     {
@@ -73,6 +79,21 @@ export default function Services() {
 
       <Section surface="white">
         <StandardServices items={services} priceNote={st("priceNote")} />
+      </Section>
+
+      <Section surface="subtle" size="lg">
+        <AfterCare
+          surface="subtle"
+          eyebrow={ac("eyebrow")}
+          badge={ac("badge")}
+          heading={ac("heading")}
+          problem={ac("problem")}
+          features={ac.raw("features") as string[]}
+          price={ac("price")}
+          priceNote={ac("priceNote")}
+          cta={ac("cta")}
+          ctaHref={CONTACT}
+        />
       </Section>
     </>
   );
