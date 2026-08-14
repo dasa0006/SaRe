@@ -25,6 +25,7 @@
 @import "../components/blocks/web-development-lead/WebDevelopmentLead.css";
 @import "../components/blocks/standard-services/StandardServices.css";
 @import "../components/blocks/after-care/AfterCare.css";
+@import "../components/blocks/case-study/CaseStudy.css";
 
 /* Project Component CSS files */
 @import "../components/project-components/wip-graphic/WipGraphic.css";

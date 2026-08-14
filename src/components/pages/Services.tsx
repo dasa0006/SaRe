@@ -6,6 +6,7 @@ import { StandardServices } from "@/components/blocks/standard-services/Standard
 import type { StandardService } from "@/components/blocks/standard-services/StandardServices.types";
 import { WebDevelopmentLead } from "@/components/blocks/web-development-lead/WebDevelopmentLead";
 import { AfterCare } from "@/components/blocks/after-care/AfterCare";
+import { CaseStudy } from "@/components/blocks/case-study/CaseStudy";
 import { CONTACT } from "@/lib/config/routes";
 
 /**
@@ -20,11 +21,17 @@ import { CONTACT } from "@/lib/config/routes";
  * The after-care recurring-subscription tier (issue #73) closes the page as
  * the final, visually distinct pricing card below the project services, per
  * decision #7. Copy is read from the `AfterCare` namespace.
+ *
+ * The case-study section (issue #68/#75) ends the page as the closing trust
+ * section after the after-care tier: a single hero case (Improve Invest) told
+ * as the 5-beat narrative (Shape A), closing on a service-agnostic contact
+ * CTA. Copy is read from the `CaseStudy` namespace.
  */
 export default function Services() {
   const t = useTranslations("WebDevelopmentLead");
   const st = useTranslations("StandardServices");
   const ac = useTranslations("AfterCare");
+  const cs = useTranslations("CaseStudy");
 
   const services: StandardService[] = [
     {
@@ -92,6 +99,37 @@ export default function Services() {
           price={ac("price")}
           priceNote={ac("priceNote")}
           cta={ac("cta")}
+          ctaHref={CONTACT}
+        />
+      </Section>
+
+      <Section surface="white" size="lg">
+        <CaseStudy
+          surface="white"
+          eyebrow={cs("eyebrow")}
+          heading={cs("heading")}
+          client={{
+            heading: cs("client.heading"),
+            body: cs("client.body"),
+          }}
+          work={{
+            heading: cs("work.heading"),
+            body: cs("work.body"),
+            items: cs.raw("work.items") as string[],
+          }}
+          collaboration={{
+            heading: cs("collaboration.heading"),
+            body: cs("collaboration.body"),
+          }}
+          result={{
+            heading: cs("result.heading"),
+            body: cs("result.body"),
+          }}
+          contact={{
+            heading: cs("contact.heading"),
+            body: cs("contact.body"),
+            cta: cs("contact.cta"),
+          }}
           ctaHref={CONTACT}
         />
       </Section>
