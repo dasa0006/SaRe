@@ -67,6 +67,118 @@
     "title": "Vores services",
     "description": "Opdag de tjenester, vi tilbyder for at hjælpe dig med at bygge bedre marketingssider."
   },
+  "WebDevelopmentLead": {
+    "eyebrow": "Webudvikling",
+    "heading": "En hjemmeside, din virksomhed kan være stolt af.",
+    "problem": "Du har en god idé — men ingen hjemmeside at vise den frem på, eller den du har, gør dig ikke retfærdighed.",
+    "features": [
+      "Bygget fra bunden, ingen skabeloner",
+      "Hurtig, sikker og søgeklar",
+      "Let for dig at opdatere",
+      "Klare leverancer og tidsplaner"
+    ],
+    "price": "Fra 20.000 DKK",
+    "priceNote": "Startende fra",
+    "cta": "Start et projekt"
+  },
+  "StandardServices": {
+    "priceNote": "Startende fra",
+    "modernising": {
+      "eyebrow": "Modernisering",
+      "heading": "En frisk hjemmeside til en træt website.",
+      "problem": "Din nuværende hjemmeside er langsom, forældet og svær at opdatere - og den koster dig stille og roligt besøgende.",
+      "features": [
+        "Hurtigere indlæsning på alle enheder",
+        "Et design, der ser nutidigt ud - ikke træt",
+        "Et redigeringssystem, du rent faktisk kan bruge",
+        "Ingen tabt SEO, placering eller indhold"
+      ],
+      "price": "12.000 DKK"
+    },
+    "responsiveness": {
+      "eyebrow": "Responsivt design",
+      "heading": "Flot på skærmen. Perfekt på telefonen.",
+      "problem": "Din hjemmeside ser godt ud på computeren, men falder fra hinanden, så snart en kunde åbner den på telefonen.",
+      "features": [
+        "Perfekt på telefon, tablet og computer",
+        "Hurtigere sider på mobilforbindelser",
+        "Trykflader i en størrelse, man kan ramme",
+        "Testet på rigtige enheder - ikke kun emulatorer"
+      ],
+      "price": "8.000 DKK"
+    },
+    "language": {
+      "eyebrow": "Sprogspecifik tekst",
+      "heading": "Sig det på kundens sprog.",
+      "problem": "Din danske hjemmeside taler engelsk til dine kunder — eller din engelske side slagter det danske sprog. Uanset hvad, koster det på tillidskontoen.",
+      "features": [
+        "Indfødt, menneskelig oversættelse - aldrig maskinoversat tekst",
+        "Konsekvent tone gennem hele siden",
+        "Korrekte lokale formater og konventioner",
+        "Begge sprog forbliver synkroniseret, mens du redigerer"
+      ],
+      "price": "5.000 DKK"
+    },
+    "excel": {
+      "eyebrow": "Excel-arbejdsbøger",
+      "heading": "Arbejdsbøger, der gør arbejdet for dig.",
+      "problem": "Din virksomhed kører på Excel - men arbejdsbøgerne er skrøbelige, fejlbehæftede og svære at overdrage.",
+      "features": [
+        "Automatiserede, fejlfrie beregninger",
+        "Klar struktur, som enhver kan vedligeholde"
+      ],
+      "price": "6.000 DKK"
+    }
+  },
+  "AfterCare": {
+    "eyebrow": "Efterpleje",
+    "badge": "Abonnement",
+    "heading": "Din hjemmeside bliver aldrig rigtig færdig.",
+    "problem": "Lanceringsdagen er ikke slutningen. Ting ændrer sig — ny tekst, nye sider, nye idéer. Efterpleje er en løbende aftale, der holder din hjemmeside sund, sikker og hurtig — fra 350 kr. om måneden, med services du tilføjer, efterhånden som dine behov vokser.",
+    "features": [
+      "Sikkerhed — sårbarhedsscanning, patches og opdatering af afhængigheder (fra 350 kr./md.)",
+      "Support — fejlsøgning, akutte fixes og hjælp til deployment",
+      "Aktiv optimering — performance, struktur, design og brugeroplevelse",
+      "Indholdsændringer inden for din eksisterende struktur",
+      "Månedlig rapport — performance, sikkerhedsstatus og oppetid",
+      "Driftsovervågning med automatiske nedbrudsalarmer"
+    ],
+    "price": "Fra 350 kr.",
+    "priceNote": "per måned",
+    "cta": "Sammensæt dit eget abonnement"
+  },
+  "CaseStudy": {
+    "eyebrow": "Kundecase",
+    "heading": "Ét år. Én kunde. Fra træt WordPress til en hjemmeside, der stadig kører.",
+    "client": {
+      "heading": "Kunden og problemet",
+      "body": "Improve Invest er en ejendomsudviklingsfond, der arbejder med transformation af ældre bygninger. Da de kom til os, var deres hjemmeside bygget i WordPress flere år tidligere — og det kunne man mærke. Den var tung, svær at opdatere og lignede ikke det seriøse investeringsselskab, de er."
+    },
+    "work": {
+      "heading": "Hvad vi lavede",
+      "body": "Vi startede fra bunden og blev ved i et år — i tæt dialog med kunden hele vejen.",
+      "items": [
+        "En helt ny hjemmeside bygget fra bunden i Next.js — ingen skabeloner, intet WordPress-bagage",
+        "Siden gik fra kun dansk til dansk, tysk og engelsk",
+        "Responsivitet rettet til på alle enheder, testet på rigtige telefoner og tablets",
+        "Et fuldt redesign med animationer og klikbare prototyper, vi forfinede sammen",
+        "Deres kundevendte Excel-arbejdsbog blev gjort præsentabel: forside, farver og en klikbar brugergrænseflade"
+      ]
+    },
+    "collaboration": {
+      "heading": "Sådan arbejdede vi sammen",
+      "body": "I et år arbejdede vi som deres team — ikke bare som en leverandør. Vi mødtes løbende, viste prototyper, lyttede og justerede. Ingen projektledere imellem os: når de skrev, var det os, der svarede. Til sidst kendte vi deres forretning godt nok til selv at foreslå det næste rigtige træk."
+    },
+    "result": {
+      "heading": "Resultatet",
+      "body": "En hurtig, moderne hjemmeside på tre sprog, der ser ud, som virksomheden er: professionel. Stadig i drift, stadig vedligeholdt, stadig i udvikling. Sådan ser et års samarbejde ud."
+    },
+    "contact": {
+      "heading": "Vil du have det samme for din hjemmeside?",
+      "body": "Fortæl os, hvor din hjemmeside står i dag, så giver vi dig en ærlig vurdering af, hvad der kan betale sig — uanset om det er en ny byg, en modernisering eller bare et bedre sprog.",
+      "cta": "Fortæl os om dit projekt"
+    }
+  },
   "ContactPage": {
     "title": "Kontakt os",
     "description": "Kontakt vores team for spørgsmål og support."
