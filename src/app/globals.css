@@ -26,6 +26,8 @@
 @import "../components/blocks/standard-services/StandardServices.css";
 @import "../components/blocks/after-care/AfterCare.css";
 @import "../components/blocks/case-study/CaseStudy.css";
+@import "../components/blocks/founder-spotlights/FounderSpotlights.css";
+@import "../components/blocks/proof-point/ProofPoint.css";
 
 /* Project Component CSS files */
 @import "../components/project-components/wip-graphic/WipGraphic.css";

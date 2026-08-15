@@ -179,6 +179,77 @@
       "cta": "Fortæl os om dit projekt"
     }
   },
+  "AboutPage": {
+    "title": "Om os",
+    "description": "De to personer bag SaRe – et hjemmesidestudie i København, der bygger, moderniserer og vedligeholder hjemmesider."
+  },
+  "AboutIntro": {
+    "heading": "Vi er SaRe.",
+    "content": "Et lille hjemmesidestudie på to personer i København. Vi bygger, moderniserer og vedligeholder hjemmesider for virksomheder, der vil have det gjort ordentligt.\n\nIngen account managers, ingen mellemmænd. Når du hyrer os, arbejder du direkte med de to personer, der bygger din hjemmeside."
+  },
+  "Founders": {
+    "heading": "Grundlæggerne",
+    "founders": [
+      {
+        "name": "Daniel Saleh",
+        "role": "Medstifter – bygger og vedligeholder hjemmesiderne.",
+        "background": "Daniel er den, der bygger. Han har bygget, moderniseret og vedligeholdt hjemmesider for virksomheder i årevis – og han interesserer sig for, hvad der sker efter lancering, ikke kun på selve dagen. Det er ham, der svarer, når du skriver, og ham, der holder din side kørende."
+      },
+      {
+        "name": "Gustav Reumert",
+        "role": "Medstifter – sørger for, at detaljerne er rigtige.",
+        "background": "Gustav er den, der sørger for, at detaljerne er på plads – sproget, designet og måden, det hele hænger sammen på. Han har skrevet og oversat hjemmesidetekster for danske og internationale virksomheder, og han mener, at de små ting er det, der får en side til at føles professionel."
+      }
+    ]
+  },
+  "HowWeWork": {
+    "heading": "Sådan arbejder vi",
+    "description": "Fire ting, du kan forvente, når du arbejder med os:",
+    "features": [
+      {
+        "heading": "Direkte linjer",
+        "description": "Du skriver til os – ikke til en account manager. Den, der svarer, er den, der laver arbejdet."
+      },
+      {
+        "heading": "Ærlige vurderinger",
+        "description": "Hvis din hjemmeside ikke trænger til en genopbygning, siger vi det til dig. Vi laver hellere en mindre opgave end en forkert."
+      },
+      {
+        "heading": "Lille team, korte linjer",
+        "description": "To personer, ingen lag. Beslutninger træffes dér, hvor arbejdet foregår – som regel samme dag."
+      },
+      {
+        "heading": "Klar ramme",
+        "description": "Du ved, hvad vi leverer, hvornår og til hvilken pris – før vi går i gang."
+      }
+    ]
+  },
+  "Values": {
+    "heading": "Det, vi vægter",
+    "features": [
+      {
+        "heading": "Lige ud af posen",
+        "description": "Vi siger, hvad vi mener, i ord, du ikke skal slå op i en ordbog for. Ingen jargon, ingen buzzwords, intet teater."
+      },
+      {
+        "heading": "Lange samarbejder",
+        "description": "Vi arbejder hellere med de samme kunder i årevis end at jagte enkeltstående projekter. Sådan holder hjemmesider sig gode længe efter lancering."
+      },
+      {
+        "heading": "Substans frem for hype",
+        "description": "Vi lader arbejdet tale for sig selv. En hurtig, stabil hjemmeside siger mere end en side fuld af superlativer."
+      }
+    ]
+  },
+  "AboutProof": {
+    "content": "Vi brugte et år på at genopbygge én kundes hjemmeside fra bunden – og vi vedligeholder den stadig i dag. Sådan arbejder vi helst.",
+    "linkLabel": "Læs hele historien på vores Services-side"
+  },
+  "AboutCta": {
+    "heading": "Lad os tale om din hjemmeside.",
+    "primaryCTA": "Kontakt os",
+    "secondaryCTA": "Se vores services"
+  },
   "ContactPage": {
     "title": "Kontakt os",
     "description": "Kontakt vores team for spørgsmål og support."
@@ -193,8 +264,8 @@
       "description": "Opdag de tjenester, vi tilbyder for at hjælpe dig med at bygge bedre marketingssider."
     },
     "about": {
-      "title": "Om os | Marketing Starter",
-      "description": "Lær mere om vores virksomhed og hvad vi laver."
+      "title": "Om SaRe",
+      "description": "Mød det lille københavnske team bag SaRe. Vi bygger, moderniserer og vedligeholder hjemmesider – du arbejder direkte med ejerne."
     },
     "contact": {
       "title": "Kontakt os | Marketing Starter",

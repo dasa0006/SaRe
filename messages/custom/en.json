@@ -179,6 +179,77 @@
       "cta": "Tell us about your project"
     }
   },
+  "AboutPage": {
+    "title": "About",
+    "description": "The two people behind SaRe — a Copenhagen studio that builds, modernises and maintains websites."
+  },
+  "AboutIntro": {
+    "heading": "We are SaRe.",
+    "content": "A two-person website studio in Copenhagen. We build, modernise and maintain websites for businesses that want them done properly.\n\nNo account managers, no middlemen. When you hire us, you work directly with the two people who build your website."
+  },
+  "Founders": {
+    "heading": "The founders",
+    "founders": [
+      {
+        "name": "Daniel Saleh",
+        "role": "Co-founder — builds and maintains the websites.",
+        "background": "Daniel is the one who does the building. He has built, modernised and maintained websites for businesses for years — and he cares about what happens after launch, not just on the day. He is the one who answers when you write, and the one who keeps your site running."
+      },
+      {
+        "name": "Gustav Reumert",
+        "role": "Co-founder — makes sure the details are right.",
+        "background": "Gustav is the one who makes sure the details are right — the language, the design, the way it all fits together. He has written and translated website copy for Danish and international businesses, and he believes the small things are what make a site feel professional."
+      }
+    ]
+  },
+  "HowWeWork": {
+    "heading": "How we work",
+    "description": "Four things you can expect when you work with us:",
+    "features": [
+      {
+        "heading": "Direct lines",
+        "description": "You write to us, not to an account manager. The person who answers is the person who does the work."
+      },
+      {
+        "heading": "Honest assessments",
+        "description": "If your website doesn't need a rebuild, we'll tell you. We'd rather do a smaller job than a wrong one."
+      },
+      {
+        "heading": "Small team, short lines",
+        "description": "Two people, no layers. Decisions are made where the work happens — usually the same day."
+      },
+      {
+        "heading": "Clear scope",
+        "description": "You'll know what we deliver, when, and for what price — before we start."
+      }
+    ]
+  },
+  "Values": {
+    "heading": "What we value",
+    "features": [
+      {
+        "heading": "Plain-spoken",
+        "description": "We say what we mean, in words you don't need a dictionary for. No jargon, no buzzwords, no theatre."
+      },
+      {
+        "heading": "Long-term relationships",
+        "description": "We'd rather work with the same clients for years than chase one-off projects. That's how sites stay good long after launch."
+      },
+      {
+        "heading": "Substance over hype",
+        "description": "We let the work speak for itself. A fast, reliable website says more than a page of superlatives."
+      }
+    ]
+  },
+  "AboutProof": {
+    "content": "We spent a year rebuilding one client's website from scratch — and we still maintain it today. That's how we like to work.",
+    "linkLabel": "Read the full story on our Services page"
+  },
+  "AboutCta": {
+    "heading": "Let's talk about your website.",
+    "primaryCTA": "Get in touch",
+    "secondaryCTA": "Explore our services"
+  },
   "ContactPage": {
     "title": "Contact Us",
     "description": "Get in touch with our team for inquiries and support."
@@ -193,8 +264,8 @@
       "description": "Discover the services we offer to help you build better marketing sites."
     },
     "about": {
-      "title": "About Us | Marketing Starter",
-      "description": "Learn more about our company and what we do."
+      "title": "About SaRe",
+      "description": "Meet the two-person Copenhagen studio behind SaRe. We build, modernise and maintain websites — you work directly with the owners."
     },
     "contact": {
       "title": "Contact Us | Marketing Starter",
