@@ -103,7 +103,7 @@ export default function Services() {
         />
       </Section>
 
-      <Section surface="white" size="lg">
+      <Section surface="white" size="lg" id="improve-invest">
         <CaseStudy
           surface="white"
           eyebrow={cs("eyebrow")}
