@@ -1,0 +1,148 @@
+@layer components {
+  .case-study {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+  }
+
+  /* ── Surface-aware text (narrative inherits the Section surface) ─ */
+  .case-study .heading,
+  .case-study .text-default {
+    color: inherit;
+  }
+
+  /* ── Section frame ────────────────────────────────────────────── */
+  .case-study-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 48rem;
+  }
+
+  .case-study-eyebrow {
+    margin: 0;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  /* Keep muted labels readable (AA contrast) on dark/accent surfaces. */
+  .case-study[data-surface="dark"] .case-study-eyebrow,
+  .case-study[data-surface="accent"] .case-study-eyebrow {
+    opacity: 1;
+  }
+
+  /* ── Five-beat narrative ──────────────────────────────────────── */
+  .case-study-beats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .case-study-beats {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 4rem;
+    }
+  }
+
+  .case-study-beat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.875rem;
+  }
+
+  /* Beat marker — the numbered "01–04" editorial signature. */
+  .case-study-beat-number {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--surface-accent);
+  }
+
+  /* The accent signature is too dim on dark surfaces (AA 4.5:1 fails) —
+   * fall back to the surface text colour there, like the eyebrow. */
+  .case-study[data-surface="dark"] .case-study-beat-number,
+  .case-study[data-surface="accent"] .case-study-beat-number {
+    color: var(--text-on-dark);
+  }
+
+  .case-study-beat-body {
+    margin: 0;
+  }
+
+  .case-study-work-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin: 0.25rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .case-study-work-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-size: 0.9375rem;
+  }
+
+  .case-study-work-item-mark {
+    flex-shrink: 0;
+    width: 0.375rem;
+    height: 0.375rem;
+    margin-top: 0.5em;
+    border-radius: 999px;
+    background-color: var(--surface-accent);
+  }
+
+  .case-study[data-surface="accent"] .case-study-work-item-mark {
+    background-color: var(--text-on-accent);
+  }
+
+  /* ── Screenshot strip (asset-agnostic — only rendered when set) ─ */
+  .case-study-screenshots {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .case-study-screenshots {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .case-study-screenshot {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+  }
+
+  /* ── Closing contact panel (accent card) ──────────────────────── */
+  .case-study-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    background-color: var(--surface-accent);
+    color: var(--text-on-accent);
+  }
+
+  .case-study-contact .heading,
+  .case-study-contact .text-default {
+    color: var(--text-on-accent);
+  }
+
+  .case-study-contact-body {
+    margin: 0;
+  }
+}
