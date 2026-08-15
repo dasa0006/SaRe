@@ -67,6 +67,118 @@
     "title": "Our Services",
     "description": "Discover the services we offer to help you build better marketing sites."
   },
+  "WebDevelopmentLead": {
+    "eyebrow": "Web development",
+    "heading": "A website your business can be proud of.",
+    "problem": "You have a good idea — but no website to show it off, or the one you have doesn't do you justice.",
+    "features": [
+      "Built from scratch, no templates",
+      "Fast, secure and search-ready",
+      "Easy for you to update",
+      "Clear deliverables and timelines"
+    ],
+    "price": "From 20,000 DKK",
+    "priceNote": "Starting from",
+    "cta": "Start a project"
+  },
+  "StandardServices": {
+    "priceNote": "Starting from",
+    "modernising": {
+      "eyebrow": "Modernising",
+      "heading": "A fresh start for a tired website.",
+      "problem": "Your current website is slow, dated and hard to update — and it is quietly costing you visitors.",
+      "features": [
+        "Faster load times on every device",
+        "A design that looks current, not tired",
+        "An editor you can actually use",
+        "No lost SEO, ranking or content"
+      ],
+      "price": "12,000 DKK"
+    },
+    "responsiveness": {
+      "eyebrow": "Responsiveness",
+      "heading": "Beautiful on a laptop. Perfect on a phone.",
+      "problem": "Your site looks great on a desktop but falls apart the moment a customer opens it on a phone.",
+      "features": [
+        "Flawless on phone, tablet and desktop",
+        "Faster pages on mobile connections",
+        "Touch targets sized for real thumbs",
+        "Tested on real devices, not just emulators"
+      ],
+      "price": "8,000 DKK"
+    },
+    "language": {
+      "eyebrow": "Language copy",
+      "heading": "Say it in your customer's language.",
+      "problem": "Your Danish website speaks English to your customers — or your English site mangles the Danish. Either way, it costs trust.",
+      "features": [
+        "Native, human translation — never machine text",
+        "Consistent tone and voice across the whole site",
+        "Correct local formats and conventions",
+        "Both languages stay in sync as you edit"
+      ],
+      "price": "5,000 DKK"
+    },
+    "excel": {
+      "eyebrow": "Excel workbooks",
+      "heading": "Workbooks that do the work for you.",
+      "problem": "Your business runs on Excel — but the workbooks are fragile, error-prone and hard to hand over.",
+      "features": [
+        "Automated, error-free calculations",
+        "Clear structure anyone can maintain"
+      ],
+      "price": "6,000 DKK"
+    }
+  },
+  "AfterCare": {
+    "eyebrow": "After-care",
+    "badge": "Subscription",
+    "heading": "Your website is never really finished.",
+    "problem": "Launch day isn't the end. Things change — new text, new pages, new ideas. After-care is a running plan that keeps your site healthy, secure and fast — from 350 DKK a month, with services you add as your needs grow.",
+    "features": [
+      "Security — vulnerability scanning, patches and dependency updates (from 350 DKK/month)",
+      "Support — troubleshooting, urgent fixes and deployment help",
+      "Active optimisation — performance, structure, design and UX",
+      "Content changes within your existing structure",
+      "Monthly reporting — performance, security status and uptime",
+      "Uptime monitoring with automatic downtime alerts"
+    ],
+    "price": "From 350 DKK",
+    "priceNote": "per month",
+    "cta": "Build your own plan"
+  },
+  "CaseStudy": {
+    "eyebrow": "Case study",
+    "heading": "One year. One client. From a tired WordPress site to a site that's still running.",
+    "client": {
+      "heading": "The client and the problem",
+      "body": "Improve Invest is a property fund that transforms older buildings. When they came to us, their website had been built in WordPress years earlier — and it showed. It was slow, hard to update, and it didn't look like the serious investment company they are."
+    },
+    "work": {
+      "heading": "What we did",
+      "body": "We started from scratch and kept going for a year, in close dialogue with the client.",
+      "items": [
+        "A new website built from scratch in Next.js — no templates, no WordPress baggage",
+        "The site went from Danish-only to Danish, German and English",
+        "Responsiveness fixed on every device, tested on real phones and tablets",
+        "A full redesign with animations and clickable prototypes we refined together",
+        "Their client-facing Excel workbook made presentable: front page, colour, clickable interface"
+      ]
+    },
+    "collaboration": {
+      "heading": "How we worked together",
+      "body": "For a year we worked as their team, not just their supplier. We met regularly, showed prototypes, listened and adjusted. No account managers in between — when they wrote, we answered. By the end, we knew their business well enough to suggest the next move ourselves."
+    },
+    "result": {
+      "heading": "The result",
+      "body": "A fast, modern website in three languages that looks the way the company is: professional. Still live, still maintained, still evolving. That's what a year of working together looks like."
+    },
+    "contact": {
+      "heading": "Would you like the same for your website?",
+      "body": "Tell us where your website stands today. We'll give you an honest assessment of what's worth doing — whether that's a new build, a modernisation or a better language.",
+      "cta": "Tell us about your project"
+    }
+  },
   "ContactPage": {
     "title": "Contact Us",
     "description": "Get in touch with our team for inquiries and support."
