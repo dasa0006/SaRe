@@ -252,7 +252,26 @@
   },
   "ContactPage": {
     "title": "Kontakt os",
-    "description": "Kontakt vores team for spørgsmål og support."
+    "description": "Kontakt vores team for spørgsmål og support.",
+    "intro": {
+      "heading": "Kom i kontakt.",
+      "warmLine": "En ny byg, en modernisering eller bare et spørgsmål – skriv, hvad du har i tankerne. Du får et ærligt svar på, hvad der kan betale sig, uanset om det bliver et projekt eller et venligt \"det er ikke os\".",
+      "ownersEcho": "Der er ingen mellemmand: den, der læser din besked, er den, der laver arbejdet.",
+      "responseTime": "Vi svarer inden for 1–2 hverdage."
+    },
+    "form": {
+      "nameLabel": "Navn",
+      "emailLabel": "E-mail",
+      "messageLabel": "Besked",
+      "submit": "Send besked",
+      "fallback": "Foretrækker du e-mail?",
+      "email": "gustav@example.com",
+      "success": "Beskeden er sendt — tak for din henvendelse. Vi vender tilbage inden for 1–2 hverdage.",
+      "error": "Der gik noget galt med at sende din besked. Prøv igen, eller skriv direkte til os:",
+      "nameError": "Udfyld venligst dit navn.",
+      "emailError": "Indtast venligst en gyldig e-mailadresse.",
+      "messageError": "Skriv venligst din besked."
+    }
   },
   "Metadata": {
     "home": {
@@ -268,8 +287,8 @@
       "description": "Mød det lille københavnske team bag SaRe. Vi bygger, moderniserer og vedligeholder hjemmesider – du arbejder direkte med ejerne."
     },
     "contact": {
-      "title": "Kontakt os | Marketing Starter",
-      "description": "Kontakt vores team for spørgsmål og support."
+      "title": "Kontakt | SaRe",
+      "description": "Kom i kontakt med SaRe – hjemmesidestudiet i København, hvor du arbejder direkte med ejerne. Vi svarer inden for 1–2 hverdage."
     },
     "privacy": {
       "title": "Privatlivspolitik | Marketing Starter",
