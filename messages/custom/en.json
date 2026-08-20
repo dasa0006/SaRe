@@ -265,7 +265,12 @@
       "messageLabel": "Message",
       "submit": "Send message",
       "fallback": "Prefer email?",
-      "email": "hello@sare.dk"
+      "email": "gustav@example.com",
+      "success": "Message sent — thanks for writing. We'll get back to you within 1–2 business days.",
+      "error": "Something went wrong sending your message. Please try again, or email us directly:",
+      "nameError": "Please enter your name.",
+      "emailError": "Please enter a valid email address.",
+      "messageError": "Please enter your message."
     }
   },
   "Metadata": {

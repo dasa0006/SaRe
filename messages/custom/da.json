@@ -265,7 +265,12 @@
       "messageLabel": "Besked",
       "submit": "Send besked",
       "fallback": "Foretrækker du e-mail?",
-      "email": "hej@sare.dk"
+      "email": "gustav@example.com",
+      "success": "Beskeden er sendt — tak for din henvendelse. Vi vender tilbage inden for 1–2 hverdage.",
+      "error": "Der gik noget galt med at sende din besked. Prøv igen, eller skriv direkte til os:",
+      "nameError": "Udfyld venligst dit navn.",
+      "emailError": "Indtast venligst en gyldig e-mailadresse.",
+      "messageError": "Skriv venligst din besked."
     }
   },
   "Metadata": {
