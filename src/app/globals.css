@@ -33,6 +33,10 @@
 @import "../components/project-components/wip-graphic/WipGraphic.css";
 @import "../components/project-components/contact-form/ContactForm.css";
 
+/* PROTOTYPE — homepage composition variants (wayfinder #115). Delete with
+ * src/components/pages/home-prototype/ once the prototype is resolved. */
+@import "../components/pages/home-prototype/HomePrototype.css";
+
 /* --- Primitive Tokens ---
  * These are injected into Tailwind's theme system so they are available as
  * utility classes (e.g. `bg-background`, `text-foreground`).
