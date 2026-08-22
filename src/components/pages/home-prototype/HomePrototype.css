@@ -1,8 +1,8 @@
-/* PROTOTYPE — throwaway CSS for the homepage composition prototypes
- * (wayfinder ticket #115). Carries the ADR-0004 palette locally via
- * `.proto-tokens` because the production token layer has not landed yet.
- * Delete this file (and its globals.css import) when the prototype is
- * resolved. */
+/* PROTOTYPE — throwaway CSS for the approved homepage composition preview
+ * (wayfinder #115, Variant B "Blueprint grid"). Carries the ADR-0004 palette
+ * locally via `.proto-tokens` because the production token layer has not
+ * landed yet. Delete this file (and its globals.css import) once the real
+ * implementation (#116) lands. */
 
 @layer components {
   /* ---- Scoped ADR-0004 tokens: warm stone + deep teal ---- */
@@ -98,60 +98,5 @@
 
   .proto-grid-dense {
     background-size: 2rem 2rem;
-  }
-
-  /* ---- Device: geometric divider (hairlines + teal diamond) ---- */
-  .proto-divide {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding-inline: max(1rem, calc((100% - 80rem) / 2 + 2rem));
-    background: var(--surface-white);
-    color: var(--text-on-white);
-  }
-
-  .proto-divide::before,
-  .proto-divide::after {
-    content: "";
-    height: 1px;
-    flex: 1;
-    background: var(--border-light);
-  }
-
-  .proto-divide i {
-    width: 0.5rem;
-    height: 0.5rem;
-    rotate: 45deg;
-    background: var(--surface-accent);
-  }
-
-  /* ---- Floating variant switcher ---- */
-  .proto-switcher {
-    position: fixed;
-    left: 50%;
-    bottom: 1.25rem;
-    transform: translateX(-50%);
-    z-index: 60;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.5rem 0.875rem;
-    border-radius: 9999px;
-    background: #111827;
-    color: #f9fafb;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    font-family: var(--font-geist-mono), monospace;
-    font-size: 0.8125rem;
-    white-space: nowrap;
-  }
-
-  .proto-switcher button {
-    cursor: pointer;
-    padding: 0.125rem 0.375rem;
-    border-radius: 9999px;
-  }
-
-  .proto-switcher button:hover {
-    background: rgba(255, 255, 255, 0.15);
   }
 }

@@ -28,8 +28,8 @@ export async function generateMetadata({
 export default function HomePage() {
   return (
     <>
-      {/* PROTOTYPE (wayfinder #115): dev builds render the homepage
-          composition variants; production keeps the shipped Index. */}
+      {/* PROTOTYPE (wayfinder #115): dev builds render the approved
+          homepage composition (Variant B); production keeps Index. */}
       {process.env.NODE_ENV === "production" ? <Index /> : <HomePrototype />}
       <JsonLdScripts />
     </>
