@@ -29,9 +29,8 @@
 @import "../components/blocks/founder-spotlights/FounderSpotlights.css";
 @import "../components/blocks/proof-point/ProofPoint.css";
 
-/* Project Component CSS files */
-@import "../components/project-components/wip-graphic/WipGraphic.css";
-@import "../components/project-components/contact-form/ContactForm.css";
+@import "../components/blocks/contact-form/ContactForm.css";
+@import "../components/blocks/brand-marquee/BrandMarquee.css";
 
 /* PROTOTYPE — homepage composition variants (wayfinder #115). Delete with
  * src/components/pages/home-prototype/ once the prototype is resolved. */

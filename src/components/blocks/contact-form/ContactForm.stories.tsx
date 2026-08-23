@@ -5,7 +5,7 @@ import { ContactForm } from "./ContactForm";
 import { mockContactFormProps } from "./ContactForm.mocks";
 
 const meta: Meta<typeof ContactForm> = {
-  title: "Project Components/ContactForm",
+  title: "Blocks/ContactForm",
   component: ContactForm,
   tags: ["autodocs"],
   decorators: [
