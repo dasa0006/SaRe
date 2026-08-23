@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Section } from "@/components/layout/section/Section";
 import { TextBlock } from "@/components/blocks/text-block/TextBlock";
-import { ContactForm } from "@/components/project-components/contact-form/ContactForm";
+import { ContactForm } from "@/components/blocks/contact-form/ContactForm";
 
 /**
  * Contact page composition component.
