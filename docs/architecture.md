@@ -1,6 +1,6 @@
 # Architecture
 
-This document describes the provider chain, consent system, security headers, i18n architecture, analytics strategy, and architectural decision records. It is the reference for how the template is wired together.
+This document describes the provider chain, consent system, security headers, i18n architecture, analytics strategy, and architectural decision records. It is the reference for how the site is wired together.
 
 ## Provider Hierarchy
 

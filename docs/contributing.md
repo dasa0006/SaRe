@@ -112,7 +112,7 @@ All styling uses Tailwind utility classes only. Component variant and size class
 
 ### How to add a component
 
-1. Determine the category: `ui/` (primitive), `blocks/` (reusable pattern), or `project-components/` (client-specific)
+1. Determine the category by the component's nature (see the placement tree under [Decision Trees](#decision-trees)): `ui/` (primitive), `blocks/` (marketing pattern composed of primitives), `layout/` (page chrome), or `pages/` (complete route)
 2. If the component meets all Tier 0 criteria (no visual variation, trivial or no props, single consumer), create a single flat file at `src/components/{category}/{ComponentName}.tsx` and stop — no directory, no types, no mock, no story
 3. Otherwise, create the directory: `src/components/{category}/{ComponentName}/`
 4. Create types file (props interface, variant/size unions)
@@ -140,14 +140,7 @@ All styling uses Tailwind utility classes only. Component variant and size class
 
 1. Override primitive tokens in `src/app/globals.css` inside the `@theme` block — redeclare `--color-brand-*`, `--font-sans`, `--radius-*`, etc.
 2. The semantic tokens (in `:root` / `.dark`) reference primitives via `var()`, so they automatically pick up the new values.
-3. No template component files need modification.
-
-### How to add a project-specific component
-
-1. Create the directory: `src/components/project-components/{FeatureOrClientName}/{ComponentName}/`
-2. Follow the same Tier 1 or Tier 2 file convention
-3. The component has full access to all template primitives, blocks, and utilities
-4. If the component later proves useful across 2+ projects, move it to the appropriate `ui/` or `blocks/` category
+3. No component files need modification.
 
 ### How to add or modify a security header
 
@@ -162,33 +155,23 @@ All styling uses Tailwind utility classes only. Component variant and size class
 
 ## Decision Trees
 
-### "Should this be a Block or a Project-Component?"
+### "Where does this component go?"
+
+Placement is decided by what the thing **is** — its nature — not by who will use it or how reusable it feels:
 
 ```
-Have I seen this pattern in 2+ client projects?
-├── Yes → It belongs in blocks/ (or ui/ if it's a low-level primitive)
-└── No  → It belongs in project-components/
-
-Am I solving a general problem or a client-specific one?
-├── General (any marketing site needs this) → Template component
-└── Specific (only this client's site needs this) → Project component
-
-Will this component make starting the NEXT project faster?
-├── Yes → Template component
-└── No  → Project component
+What is this thing, by nature?
+├── A low-level, single-purpose piece with no business meaning
+│     → ui/ (Primitive)
+├── Composes primitives into a complete marketing pattern
+│     → blocks/ (Block)
+├── Page chrome and positioning (header, footer, section shells)
+│     → layout/ (Layout)
+└── A complete route's composition
+      → pages/ (Page)
 ```
 
-### "Should I edit the template or add to project-components?"
-
-```
-Does the change add new functionality or modify existing?
-├── Add new
-│   ├── Reusable across projects? → Add to template
-│   └── Client-specific? → project-components/
-└── Modify existing
-    ├── Bug fix affecting all projects? → Fix in template
-    └── Visual change for one client? → Override in project-components/
-```
+Work down the list in order: if it has no business meaning of its own, it's a Primitive. If it composes primitives into a pattern a page can consume, it's a Block. If its job is chrome and positioning, it's Layout. Only when the unit is an entire route does it belong in `pages/`.
 
 ### "Is this a base string or a custom string?"
 
@@ -208,7 +191,7 @@ Is this string required for the template to function (not for content)?
 └── No → custom/
 ```
 
-Any "yes" to the first branch of any question gives the answer. The axis mirrors the component decision tree above: **base strings are pre-translated by the template author; custom strings are translated per project.**
+Any "yes" to the first branch of any question gives the answer. The messages axis is independent of component placement: **base strings are pre-translated by the template author; custom strings are translated per project.**
 
 ---
 
@@ -220,7 +203,7 @@ Any "yes" to the first branch of any question gives the answer. The axis mirrors
 | **Tier 1** | All components (UI, blocks, layout)                                                     | Storybook story (+ mock data file for complex props — see mock file rule above). Verified by `pnpm test:storybook` which runs `@storybook/test-runner` + the `@storybook/addon-a11y` panel against every story.                                          |
 | **Tier 2** | Interactive components (Button, MobileDrawer, CookieBanner, LocaleSwitcher, ToggleMode) | Tier 1 + Vitest unit test covering user interaction (click, state change, focus, keyboard). For components whose interaction is best expressed inside a story (e.g. `LocaleSwitcher`), prefer `play` functions in the story over a separate Vitest test. |
 | **Tier 3** | Utilities, lib modules, validation (cn(), env, config, events, consent storage)         | Vitest unit test                                                                                                                                                                                                                                         |
-| **Tier 4** | Template-wide smoke tests                                                               | Playwright: homepage renders, navigation works, locale switching, 404 page, cookie banner interaction                                                                                                                                                    |
+| **Tier 4** | Site-wide smoke tests                                                                   | Playwright: homepage renders, navigation works, locale switching, 404 page, cookie banner interaction                                                                                                                                                    |
 
 ---
 
