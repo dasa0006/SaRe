@@ -129,11 +129,11 @@ This is a single canonical home for one concern (HTTP security headers). The Nex
 
   ### Rationale
 
-  Every project this template ships always includes English and Danish. Base Messages
-  are the subset that can be pre-translated by the template author for these two locales
-  before the project starts, eliminating recurring translation cost. For additional locales
-  (e.g., Spanish, German), Base Messages are translated by the template author before
-  project handoff — not by the project's translator.
+  The site ships in English and Danish. Base Messages
+  are the subset that were pre-translated for these two locales
+  before launch, eliminating recurring translation cost. For additional locales
+  (e.g., Spanish, German), Base Messages are translated up front — before the
+  locale ships — not by per-page translators.
   - `messages/base/{locale}.json` — strings whose translation cost is borne by the
     template author. Pre-translated for all shipped locales before the project receives
     them.

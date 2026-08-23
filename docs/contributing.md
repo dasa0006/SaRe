@@ -171,7 +171,7 @@ What is this thing, by nature?
       → pages/ (Page)
 ```
 
-Work down the list in order: if it has no business meaning of its own, it's a Primitive. If it composes primitives into a pattern a page can consume, it's a Block. If its job is chrome and positioning, it's Layout. Only when the unit is an entire route does it belong in `pages/`.
+A component gets exactly one home: read the tree top to bottom and take the first branch whose description fits.
 
 ### "Is this a base string or a custom string?"
 
@@ -186,7 +186,7 @@ Will a copywriter or client edit this string?
 ├── Yes → custom/
 └── No → base/
 
-Is this string required for the template to function (not for content)?
+Is this string required for the site to function (not for content)?
 ├── Yes → base/
 └── No → custom/
 ```
