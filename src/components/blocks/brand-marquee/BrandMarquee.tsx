@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 
 import { SITE_CONFIG } from "@/lib/config/site";
 
-const WipGraphic = () => {
+export const BrandMarquee = () => {
   const brandName = SITE_CONFIG.name;
   const commonStyle =
     "text-9xl tracking-tighter hover:opacity-20 select-all cursor-pointer";
@@ -49,5 +49,3 @@ const WipGraphic = () => {
     </div>
   );
 };
-
-export default WipGraphic;

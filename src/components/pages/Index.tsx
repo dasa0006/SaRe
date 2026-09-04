@@ -1,98 +1,146 @@
 "use client";
 
-import { Code2, RefreshCw, ShieldCheck } from "lucide-react";
+/**
+ * Homepage — Variant B "Blueprint grid" (promoted from home-prototype, wayfinder #115).
+ *
+ * Composition:
+ * 1. Hero — split layout over blueprint grid (surface: white)
+ * 2. Trust — dark mono specimen band (surface: dark)
+ * 3. Services — three columns with accent top-border (surface: subtle)
+ * 4. CTA — full-bleed teal (surface: accent)
+ *
+ * Uses ADR-0004 tokens from src/styles/tokens.css and component styles from Index.css.
+ */
+
 import { useTranslations } from "next-intl";
 import { Section } from "@/components/layout/section/Section";
-import { Hero } from "@/components/blocks/hero/Hero";
-import { TrustSignals } from "@/components/blocks/trust-signals/TrustSignals";
-import { ServicesPreview } from "@/components/blocks/services-preview/ServicesPreview";
-import { CTA } from "@/components/blocks/cta/CTA";
+import { LinkButton } from "@/components/ui/link-button/LinkButton";
 import { SERVICES, CONTACT } from "@/lib/config/routes";
-import type { ServiceTeaser } from "@/components/blocks/services-preview/ServicesPreview.types";
 
-/** Icons paired (by index) with the translated service teasers. */
-const SERVICE_ICONS = [Code2, RefreshCw, ShieldCheck] as const;
-
-interface ServiceTeaserMessage {
-  problem: string;
-  solution: string;
-}
-
-interface TrustSignalClientMessage {
-  name: string;
-  descriptor: string;
-}
-
-/**
- * Index page composition component.
- *
- * Composes the four Home blocks in their confirmed order, each wrapped in
- * a `<Section>` that owns the vertical spacing and background surface:
- *
- * 1. Hero — surface `white`, left-aligned
- * 2. TrustSignals — surface `subtle`
- * 3. ServicesPreview — surface `white`
- * 4. CTA — surface `accent`
- *
- * All copy is read from the Home message namespaces (Hero, TrustSignals,
- * ServicesPreview, CTA). CTA destinations come from the shared route
- * constants: primary → Services, secondary → Contact.
- */
 export default function Index() {
   const tHero = useTranslations("Hero");
   const tTrust = useTranslations("TrustSignals");
   const tServices = useTranslations("ServicesPreview");
   const tCta = useTranslations("CTA");
 
-  const clients = tTrust.raw("clients") as TrustSignalClientMessage[];
-
-  const teasers = (
-    tServices.raw("services") as ServiceTeaserMessage[]
-  ).map<ServiceTeaser>((service, index) => ({
-    icon: SERVICE_ICONS[index],
-    problem: service.problem,
-    solution: service.solution,
-    link: SERVICES,
-  }));
+  const clients = tTrust.raw("clients") as {
+    name: string;
+    descriptor: string;
+  }[];
+  const services = tServices.raw("services") as {
+    problem: string;
+    solution: string;
+  }[];
 
   return (
-    <>
-      <Section surface="white">
-        <Hero
-          layout="left"
-          surface="white"
-          heading={tHero("heading")}
-          subtitle={tHero("subtitle")}
-          primaryCTA={{ label: tHero("primaryCTA"), href: SERVICES }}
-          secondaryCTA={{ label: tHero("secondaryCTA"), href: CONTACT }}
-        />
+    <main>
+      {/* Hero — split layout over blueprint grid */}
+      <Section surface="white" size="xl" className="index-grid-bg">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
+          <div>
+            <p className="index-kicker">{"// SaRe — Copenhagen"}</p>
+            <h1 className="index-display mt-6 text-[clamp(2.75rem,5.5vw,4.75rem)] leading-[1.05] tracking-tight">
+              {tHero("heading")}
+            </h1>
+            <p className="mt-6 max-w-[50ch] opacity-70">{tHero("subtitle")}</p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <LinkButton href={SERVICES} size="lg">
+                {tHero("primaryCTA")}
+              </LinkButton>
+              <LinkButton href={CONTACT} variant="secondary" size="lg">
+                {tHero("secondaryCTA")}
+              </LinkButton>
+            </div>
+          </div>
+
+          {/* Abstract graphic block: nested grid squares + filled teal cell */}
+          <div
+            aria-hidden="true"
+            className="relative hidden aspect-square lg:block"
+          >
+            <div
+              className="index-grid-bg index-grid-dense absolute inset-0 border"
+              style={{ borderColor: "var(--border-light)" }}
+            />
+            <div
+              className="absolute left-8 top-8 h-20 w-20 border-2"
+              style={{ borderColor: "var(--surface-accent)" }}
+            />
+            <div
+              className="absolute bottom-8 right-8 h-28 w-28"
+              style={{ background: "var(--surface-accent)" }}
+            />
+            <p className="index-kicker absolute bottom-8 left-8">v.2026</p>
+          </div>
+        </div>
       </Section>
 
-      <Section surface="subtle">
-        <TrustSignals
-          surface="subtle"
-          heading={tTrust("heading")}
-          clients={clients}
-        />
+      {/* Trust — dark mono band */}
+      <Section surface="dark" size="sm" className="index-grain relative">
+        <div className="flex flex-wrap items-baseline gap-x-12 gap-y-3">
+          <span className="index-kicker">{tTrust("heading")}</span>
+          {clients.map((c) => (
+            <span key={c.name}>
+              <span className="font-mono text-sm font-medium tracking-wide">
+                {c.name}
+              </span>{" "}
+              <span className="text-sm opacity-60">/ {c.descriptor}</span>
+            </span>
+          ))}
+        </div>
       </Section>
 
-      <Section surface="white">
-        <ServicesPreview
-          surface="white"
-          heading={tServices("heading")}
-          linkLabel={tServices("link")}
-          services={teasers}
-        />
+      {/* Services — three columns with accent top-border */}
+      <Section surface="subtle" size="lg">
+        <h2 className="index-h2 text-[clamp(2rem,4vw,3rem)] leading-tight">
+          {tServices("heading")}
+        </h2>
+        <div className="mt-12 grid gap-10 md:grid-cols-3">
+          {services.map((s, i) => (
+            <div key={i}>
+              <div
+                className="mb-6 h-0.5 w-full"
+                style={{ background: "var(--surface-accent)" }}
+              />
+              <p
+                className="font-mono text-xs"
+                style={{ color: "var(--surface-accent)" }}
+              >
+                {String(i + 1).padStart(2, "0")} / 03
+              </p>
+              <h3 className="mt-3 text-xl font-medium leading-snug">
+                {s.problem}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed opacity-70">
+                {s.solution}
+              </p>
+            </div>
+          ))}
+        </div>
+        <LinkButton href={SERVICES} variant="secondary" className="mt-14">
+          {tServices("link")}
+        </LinkButton>
       </Section>
 
-      <Section surface="accent">
-        <CTA
-          surface="accent"
-          heading={tCta("heading")}
-          primaryCTA={{ label: tCta("primaryCTA"), href: SERVICES }}
-          secondaryCTA={{ label: tCta("secondaryCTA"), href: CONTACT }}
-        />
+      {/* CTA — full-bleed teal */}
+      <Section surface="accent" size="lg">
+        <h2 className="index-display max-w-[18ch] text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.08]">
+          {tCta("heading")}
+        </h2>
+        <div className="mt-10 flex flex-wrap gap-4">
+          <LinkButton href={SERVICES} surface="accent" size="lg">
+            {tCta("primaryCTA")}
+          </LinkButton>
+          <LinkButton
+            href={CONTACT}
+            variant="secondary"
+            surface="accent"
+            size="lg"
+          >
+            {tCta("secondaryCTA")}
+          </LinkButton>
+        </div>
       </Section>
-    </>
+    </main>
   );
 }

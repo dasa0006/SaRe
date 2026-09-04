@@ -50,17 +50,22 @@ function surfaceOf(el: HTMLElement): string | null {
 }
 
 describe("Index page composition", () => {
-  it("composes Hero, TrustSignals, ServicesPreview and CTA in order", () => {
+  it("composes Hero, Trust, Services, and CTA in order", () => {
     renderIndex("en");
 
-    const headings = screen.getAllByRole("heading");
-    // Hero (h1), TrustSignals (h2), ServicesPreview (h2), CTA (h2)
-    expect(headings.map((h) => h.textContent)).toEqual([
+    // Hero (h1), Trust (kicker), Services (h2), CTA (h2)
+    // Service teasers have h3 headings; filter for section-level headings (h1, h2)
+    const sectionHeadings = screen
+      .getAllByRole("heading")
+      .filter((h) => h.tagName === "H1" || h.tagName === "H2");
+    expect(sectionHeadings.map((h) => h.textContent)).toEqual([
       "Work directly with the owners.",
-      "Trusted by",
       "How we can help",
       "Ready to work directly with the owners?",
     ]);
+
+    // Trust kicker is a span, not a heading
+    expect(screen.getByText("Trusted by")).toBeInTheDocument();
   });
 
   it("wraps each block in the confirmed Section surface order", () => {
@@ -72,13 +77,14 @@ describe("Index page composition", () => {
       )
     ).toBe("section-surface-white");
 
-    expect(surfaceOf(screen.getByRole("heading", { name: "Trusted by" }))).toBe(
-      "section-surface-subtle"
+    // Trust section uses dark surface; kicker is inside it
+    expect(surfaceOf(screen.getByText("Trusted by"))).toBe(
+      "section-surface-dark"
     );
 
     expect(
       surfaceOf(screen.getByRole("heading", { name: "How we can help" }))
-    ).toBe("section-surface-white");
+    ).toBe("section-surface-subtle");
 
     expect(
       surfaceOf(
@@ -123,18 +129,18 @@ describe("Index page composition", () => {
     expect(secondary).toHaveAttribute("href", "/contact");
   });
 
-  it("renders TrustSignals clients with descriptors", () => {
+  it("renders Trust clients with descriptors", () => {
     renderIndex("en");
 
     expect(screen.getByText("Improve Invest")).toBeInTheDocument();
-    expect(
-      screen.getByText("Adaptive Reuse & Value-Add Property Fund")
-    ).toBeInTheDocument();
+    // Descriptor text is split across elements; match flexibly
+    expect(screen.getByText(/Adaptive Reuse/)).toBeInTheDocument();
+    expect(screen.getByText(/Value-Add Property Fund/)).toBeInTheDocument();
     expect(screen.getByText("Tani Mous Studios")).toBeInTheDocument();
-    expect(screen.getByText("A Digital Marketing Agency")).toBeInTheDocument();
+    expect(screen.getByText(/Digital Marketing Agency/)).toBeInTheDocument();
   });
 
-  it("renders three ServicesPreview teasers, each linking to Services", () => {
+  it("renders three Services teasers and a single See how link", () => {
     renderIndex("en");
 
     expect(screen.getByText("How we can help")).toBeInTheDocument();
@@ -150,11 +156,9 @@ describe("Index page composition", () => {
       screen.getByText("A website is never really finished on launch day.")
     ).toBeInTheDocument();
 
-    const seeHowLinks = screen.getAllByRole("link", { name: /See how/ });
-    expect(seeHowLinks).toHaveLength(3);
-    for (const link of seeHowLinks) {
-      expect(link).toHaveAttribute("href", "/services");
-    }
+    // Single "See how" link at section bottom
+    const seeHowLink = screen.getByRole("link", { name: /See how/ });
+    expect(seeHowLink).toHaveAttribute("href", "/services");
   });
 
   it("renders all four blocks in Danish", () => {
@@ -163,9 +167,10 @@ describe("Index page composition", () => {
     expect(
       screen.getByRole("heading", { name: "Du arbejder direkte med ejerne." })
     ).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { name: "Samarbejdspartnere" })
-    ).toBeInTheDocument();
+
+    // Trust kicker is a span, not a heading
+    expect(screen.getByText("Samarbejdspartnere")).toBeInTheDocument();
+
     expect(
       screen.getByRole("heading", { name: "Sådan kan vi hjælpe" })
     ).toBeInTheDocument();
@@ -175,12 +180,9 @@ describe("Index page composition", () => {
       })
     ).toBeInTheDocument();
 
-    // ServicesPreview teasers render a localized link label.
-    const seeHowLinks = screen.getAllByRole("link", { name: "Se hvordan" });
-    expect(seeHowLinks).toHaveLength(3);
-    for (const link of seeHowLinks) {
-      expect(link).toHaveAttribute("href", "/services");
-    }
+    // Single "Se hvordan" link at section bottom
+    const seeHowLink = screen.getByRole("link", { name: "Se hvordan" });
+    expect(seeHowLink).toHaveAttribute("href", "/services");
 
     const hero = screen
       .getByRole("heading", {

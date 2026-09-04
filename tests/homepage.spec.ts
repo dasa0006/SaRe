@@ -22,9 +22,7 @@ test.describe("Homepage", () => {
     await expect(footer).toBeVisible();
   });
 
-  test("composes Hero, TrustSignals, ServicesPreview, and CTA in order", async ({
-    page,
-  }) => {
+  test("composes Hero, Trust, Services, and CTA in order", async ({ page }) => {
     await page.goto("/en");
 
     const main = page.getByRole("main");
@@ -37,10 +35,8 @@ test.describe("Homepage", () => {
       })
     ).toBeVisible();
 
-    // TrustSignals
-    await expect(
-      main.getByRole("heading", { level: 2, name: "Trusted by" })
-    ).toBeVisible();
+    // Trust — kicker is a span, not a heading
+    await expect(main.getByText("Trusted by")).toBeVisible();
     await expect(main.getByText("Improve Invest").first()).toBeVisible();
 
     // ServicesPreview
@@ -88,9 +84,8 @@ test.describe("Homepage", () => {
         name: "Du arbejder direkte med ejerne.",
       })
     ).toBeVisible();
-    await expect(
-      main.getByRole("heading", { level: 2, name: "Samarbejdspartnere" })
-    ).toBeVisible();
+    // Trust kicker is a span, not a heading
+    await expect(main.getByText("Samarbejdspartnere")).toBeVisible();
     await expect(
       main.getByRole("heading", { level: 2, name: "Sådan kan vi hjælpe" })
     ).toBeVisible();

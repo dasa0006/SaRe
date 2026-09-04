@@ -334,7 +334,7 @@ The checklist is self-certified. CI enforces the tooling checks; the checklist r
 - **Minimum approvals:** 1
 - **Required reviewers:** At least one team member other than the author
 - **Scope of review:**
-  - Architectural fit (does this belong in template or project-components?)
+  - Architectural fit (is this in the right architectural category?)
   - Naming and file structure (does it match conventions?)
   - Edge cases and error states
   - Test coverage (are the right tests present?)
@@ -458,4 +458,4 @@ The following scripts in `package.json` are consumed by the gates above:
 | Storybook test-runner (CI) | 1-3m         | Per-component interaction regressions, a11y violations (`@storybook/addon-a11y` runs aXe against every story) | Cross-component flows     |
 | Code review                | Hours        | Architecture, naming, coverage gaps                                                                           | Automated-checkable items |
 
-The remaining gap — visual regression testing against pixel baselines (Chromatic/Percy) — is intentionally out of scope for this template. The `@storybook/addon-a11y` panel provides a component-level a11y gate; projects that need pixel-diff baselines can add Chromatic as an additional step that consumes the `build-storybook` artifact.
+The remaining gap — visual regression testing against pixel baselines (Chromatic/Percy) — is intentionally out of scope for this project. The `@storybook/addon-a11y` panel provides a component-level a11y gate; projects that need pixel-diff baselines can add Chromatic as an additional step that consumes the `build-storybook` artifact.
