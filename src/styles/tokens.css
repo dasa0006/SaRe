@@ -3,24 +3,29 @@
  * Part of the three-layer token architecture (primitive → semantic → component).
  * Primitive tokens live in globals.css @theme; this layer adds semantic meaning
  * and surface-aware variables that components reference directly.
+ *
+ * ADR-0004 palette: warm stone + deep teal
  */
 
 @layer base {
   :root {
     /* ---- Surface contexts ---- */
     --surface-white: #ffffff;
-    --surface-subtle: #f1f5f9;
-    --surface-dark: #0f172a;
-    --surface-accent: #2563eb;
+    --surface-subtle: #fafaf9;
+    --surface-dark: #1c1917;
+    --surface-accent: #0d7a6e;
 
     /* ---- Text on surfaces ---- */
-    --text-on-white: #0f172a;
-    --text-on-subtle: #0f172a;
-    --text-on-dark: #f8fafc;
+    --text-on-white: #1c1917;
+    --text-on-subtle: #1c1917;
+    --text-on-dark: #fafaf9;
     --text-on-accent: #ffffff;
 
+    /* ---- Muted text (meets 4.5:1 on subtle surface) ---- */
+    --text-muted: #57534e;
+
     /* ---- Border tokens ---- */
-    --border-light: #e2e8f0;
+    --border-light: #e7e5e4;
 
     /* ---- Border radius scale ---- */
     --radius-sm: 0.375rem;
@@ -32,17 +37,34 @@
     --section-padding-y: 4rem;
     --section-padding-y-lg: 6rem;
     --section-padding-y-xl: 8rem;
+
+    /* ---- Blueprint grid line (ADR-0004 distinctive element) ---- */
+    --proto-grid-line: color-mix(
+      in oklab,
+      var(--surface-accent) 12%,
+      transparent
+    );
   }
 
   :root.dark {
-    --surface-white: #0a0a0a;
-    --surface-subtle: #1a1a2e;
-    --surface-dark: #020617;
-    --surface-accent: #2563eb;
+    --surface-white: #0c0a09;
+    --surface-subtle: #1c1917;
+    --surface-dark: #0c0a09;
+    --surface-accent: #2dd4bf;
 
-    --text-on-white: #e2e8f0;
-    --text-on-subtle: #e2e8f0;
+    --text-on-white: #fafaf9;
+    --text-on-subtle: #fafaf9;
+    --text-on-dark: #fafaf9;
+    --text-on-accent: #1c1917;
 
-    --border-light: #1e293b;
+    --text-muted: #a8a29e;
+
+    --border-light: #292524;
+
+    --proto-grid-line: color-mix(
+      in oklab,
+      var(--surface-accent) 18%,
+      transparent
+    );
   }
 }

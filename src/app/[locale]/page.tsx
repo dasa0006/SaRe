@@ -1,5 +1,4 @@
 import Index from "@/components/pages/Index";
-import HomePrototype from "@/components/pages/home-prototype/HomePrototype";
 import { JsonLdScripts } from "@/components/seo/JsonLdScripts";
 import { getPageMetadata } from "@/lib/seo/metadata";
 import { routing, generateStaticParamsForLocales } from "@/i18n/routing";
@@ -28,9 +27,7 @@ export async function generateMetadata({
 export default function HomePage() {
   return (
     <>
-      {/* PROTOTYPE (wayfinder #115): dev builds render the approved
-          homepage composition (Variant B); production keeps Index. */}
-      {process.env.NODE_ENV === "production" ? <Index /> : <HomePrototype />}
+      <Index />
       <JsonLdScripts />
     </>
   );

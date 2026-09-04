@@ -1,0 +1,64 @@
+/* Homepage (Index) — Variant B "Blueprint grid" composition.
+ * Promoted from home-prototype (wayfinder #115).
+ * Uses ADR-0004 tokens from src/styles/tokens.css.
+ */
+
+@layer components {
+  /* ---- Display type (DM Serif Display) ---- */
+  .index-display {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 400;
+  }
+
+  /* ---- Mono kicker ---- */
+  .index-kicker {
+    display: flex;
+    font-family: var(--font-geist-mono), monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--surface-accent);
+  }
+
+  /* ---- ADR-0004 distinctive element: teal signature under h2 ---- */
+  .index-h2 {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 400;
+    background-image: linear-gradient(
+      var(--surface-accent),
+      var(--surface-accent)
+    );
+    background-repeat: no-repeat;
+    background-size: 3rem 0.08em;
+    background-position: 0 100%;
+    padding-bottom: 0.18em;
+  }
+
+  /* ---- Device: grain overlay ---- */
+  .index-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.3;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  :root.dark .index-grain::after {
+    mix-blend-mode: screen;
+    opacity: 0.14;
+  }
+
+  /* ---- Device: blueprint grid background ---- */
+  .index-grid-bg {
+    background-image:
+      linear-gradient(to right, var(--proto-grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--proto-grid-line) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+  }
+
+  .index-grid-dense {
+    background-size: 2rem 2rem;
+  }
+}
