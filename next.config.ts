@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
   images: {
     qualities: [75, 85],
   },
+  // nodemailer uses Node's net/tls at runtime — keep it out of the server
+  // bundle so the contact-form route handler loads it natively.
+  serverExternalPackages: ["nodemailer"],
   async headers() {
     return [
       {

@@ -1,6 +1,6 @@
-# Marketing Starter
+# SaRe
 
-A production-ready Next.js template for client marketing websites. Clone it, configure your brand, compose pages from blocks, and ship. Zero boilerplate setup.
+The production Next.js marketing site for SaRe ApS, built with a composable architecture of Primitives, Blocks, Layouts, and Pages.
 
 ## Reading Guide
 
@@ -19,17 +19,17 @@ This project ships with several documentation files. Which one you need depends 
 
 ## Philosophy
 
-This template exists to eliminate the 1–2 days of boilerplate required to start a new marketing website. Every decision in this project serves three goals:
+Every decision in this project serves three goals:
 
 1. **Consistency over cleverness.** Conventions are strict and enforced by config (ESLint, Husky, TypeScript strict). There should be one obvious way to do something, not three.
 2. **AI-friendly by design.** The manifest + context files, explicit file conventions, and data-driven page composition mean an AI can understand the project in one read — without re-deriving architecture from scratch each time.
-3. **Patterns over projects.** Components ship in the template only if they solve a pattern seen across 2+ client projects. Everything else goes in `project-components/`.
+3. **Nature-based placement.** Components live where they belong by what they _are_ — a business-meaning-free primitive in `ui/`, a composed marketing pattern in `blocks/`, page chrome in `layout/`, complete routes in `pages/`. See [contributing.md](./docs/contributing.md) for the placement tree.
 
-### What this template is for
+### Scope
 
-Marketing websites for clients. No heavy backend, no e-commerce, no authentication, no database.
+A marketing website for SaRe ApS. No heavy backend, no e-commerce, no authentication, no database.
 
-### What this template explicitly avoids
+### Non-goals
 
 - Over-engineering (auto-CSP-hash generators, custom image loaders)
 - Premature abstraction (generating features before seeing the pattern twice)
@@ -53,35 +53,30 @@ Marketing websites for clients. No heavy backend, no e-commerce, no authenticati
 
 - All source in `src/`
 - Components split into: `ui/` (primitives) → `blocks/` (patterns) → `layout/` (chrome) → `pages/` (assemblies)
-- **Never** put client code in `src/components/` — use `project-components/`
 - Pages compose blocks directly: each block is wrapped in a `Section` that owns its surface, size, and full-bleed behaviour
 - Components follow tier-based file conventions: Tier 0 (flat file, no story), Tier 1 (story + mock), Tier 2 (+ unit test)
 
-## Quick-Start
+## Getting Started
 
 ```bash
-# 1. Clone for a client project
-git clone <url> my-client-site && cd my-client-site
+# 1. Install dependencies
+pnpm install
 
-# 2. Set your brand
+# 2. Configure the environment
 cp .env.example .env.local    # edit NEXT_PUBLIC_SITE_URL
-edit src/lib/config/site.ts   # name, description, social links (override seam — see CONTEXT.md)
+edit src/lib/config/site.ts   # name, description, social links
 
-# 3. Start building
-pnpm install && pnpm dev
+# 3. Start developing
+pnpm dev
 ```
 
 ## What's Included?
 
-| Category   | Components                                                                             |
-| ---------- | -------------------------------------------------------------------------------------- |
-| **UI**     | Button, LinkButton, Heading, Text, Image, Brand, LocaleSwitcher, ToggleMode            |
-| **Blocks** | Hero, FeatureGrid, CTA, TextBlock                                                      |
-| **Layout** | SiteHeader, SiteFooter, Section, MobileDrawer, CookieBanner                            |
-| **Pages**  | Index (home), About, Privacy Policy, Cookie Policy                                     |
-| **Hooks**  | useButtonTracking, useScrollLock, useFocusTrap                                         |
-| **SEO**    | JSON-LD (Organization, WebSite, BreadcrumbList), dynamic OG image, sitemap, robots.txt |
-
-## What's NOT Included (add per-project)
-
-Contact forms, pricing tables, testimonials, blog listings, CMS integrations, analytics vendor code, custom image loaders.
+| Category   | Components                                                                                                                                                                             |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **UI**     | Button, LinkButton, Heading, Text, Image, Brand, LocaleSwitcher, ToggleMode                                                                                                            |
+| **Blocks** | Hero, FeatureGrid, CTA, TextBlock, ContactForm, BrandMarquee, ServicesPreview, StandardServices, FounderSpotlights, ProofPoint, TrustSignals, CaseStudy, WebDevelopmentLead, AfterCare |
+| **Layout** | SiteHeader, SiteFooter, Section, MobileDrawer, CookieBanner                                                                                                                            |
+| **Pages**  | Index (home), About, Services, Contact, Privacy Policy, Cookie Policy                                                                                                                  |
+| **Hooks**  | useButtonTracking, useScrollLock, useFocusTrap                                                                                                                                         |
+| **SEO**    | JSON-LD (Organization, WebSite, BreadcrumbList), dynamic OG image, sitemap, robots.txt                                                                                                 |

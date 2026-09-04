@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import WipGraphic from "./WipGraphic";
+import { BrandMarquee } from "./BrandMarquee";
 
 const meta = {
-  title: "project-components/WipGraphic",
-  component: WipGraphic,
-} satisfies Meta<typeof WipGraphic>;
+  title: "Blocks/BrandMarquee",
+  component: BrandMarquee,
+} satisfies Meta<typeof BrandMarquee>;
 
 export default meta;
 

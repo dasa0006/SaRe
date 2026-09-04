@@ -252,7 +252,26 @@
   },
   "ContactPage": {
     "title": "Contact Us",
-    "description": "Get in touch with our team for inquiries and support."
+    "description": "Get in touch with our team for inquiries and support.",
+    "intro": {
+      "heading": "Get in touch.",
+      "warmLine": "A new build, a modernisation, or just a question — tell us what's on your mind. We'll give you an honest answer on what's worth doing, whether that's a project or a polite \"not for you\".",
+      "ownersEcho": "There's no middleman: the person who reads your message is the person who does the work.",
+      "responseTime": "We reply within 1–2 business days."
+    },
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "submit": "Send message",
+      "fallback": "Prefer email?",
+      "email": "gustav@example.com",
+      "success": "Message sent — thanks for writing. We'll get back to you within 1–2 business days.",
+      "error": "Something went wrong sending your message. Please try again, or email us directly:",
+      "nameError": "Please enter your name.",
+      "emailError": "Please enter a valid email address.",
+      "messageError": "Please enter your message."
+    }
   },
   "Metadata": {
     "home": {
@@ -268,8 +287,8 @@
       "description": "Meet the two-person Copenhagen studio behind SaRe. We build, modernise and maintain websites — you work directly with the owners."
     },
     "contact": {
-      "title": "Contact Us | Marketing Starter",
-      "description": "Get in touch with our team for inquiries and support."
+      "title": "Contact | SaRe",
+      "description": "Get in touch with SaRe — the Copenhagen studio where you work directly with the owners. We reply within 1–2 business days."
     },
     "privacy": {
       "title": "Privacy Policy | Marketing Starter",
