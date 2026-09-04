@@ -18,4 +18,4 @@
 - [ ] Storybook stories added or updated for new/changed components
 - [ ] i18n messages added for new copy (or confirmed none needed)
 - [ ] No TODO, debug code, or console.log remains
-- [ ] PR targets the correct branch: feature → `dev`, `dev` → `staging`, `staging` → `main`
+- [ ] PR targets the correct branch — feature → `dev`, and only `chore/*-promote-*` PRs target `staging`/`main` (see `docs/branch-model.md`)

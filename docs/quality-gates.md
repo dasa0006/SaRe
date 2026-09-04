@@ -286,7 +286,7 @@ Any CI step fails → the commit/PR is marked red in GitHub. Merging is blocked 
 
 ## Layer 4 — PR Merge
 
-The final gate before code merges upward (feature → `dev` → `staging` → `main`). Unlike layers 0-3, this gate is human-driven. Escalating strictness: `dev` (no gating), `staging` (1 review, linear history), `main` (1 review, linear history, enforce admins).
+The final gate before code merges upward (feature → `dev` → `staging` → `main`). Unlike layers 0-3, this gate is review-driven and branch-protected. Only dedicated promotions may target `staging`/`main` — the full branch model and promotion procedure live in [`branch-model.md`](./branch-model.md).
 
 ### Gate: Branch naming convention
 
@@ -324,15 +324,15 @@ File: `.github/pull_request_template.md`
 - [ ] Storybook stories added or updated for new/changed components
 - [ ] i18n messages added for new copy (or confirmed none needed)
 - [ ] No TODO, debug code, or console.log remains
-- [ ] PR targets the correct branch: feature → `dev`, `dev` → `staging`, `staging` → `main`
+- [ ] PR targets the correct branch — feature → `dev`, and only `chore/*-promote-*` PRs target `staging`/`main` (see `docs/branch-model.md`)
 ```
 
 The checklist is self-certified. CI enforces the tooling checks; the checklist reminds the author of non-automatable items.
 
 ### Gate: Code review
 
-- **Minimum approvals:** 1
-- **Required reviewers:** At least one team member other than the author
+Review is a convention, not a protection rule — the repo currently sets no required-review setting on any branch, so a CI-green PR can merge without an approval. That keeps solo iteration fast; promotions to `staging`/`main` still warrant an explicit review before merging.
+
 - **Scope of review:**
   - Architectural fit (is this in the right architectural category?)
   - Naming and file structure (does it match conventions?)
@@ -345,24 +345,23 @@ Review is not a rubber stamp. If the reviewer cannot understand the change from 
 
 ### Gate: Branch up to date
 
-The target branch must not have diverged since the PR was opened. Enforced on `staging` and `main` by GitHub branch protection:
+The target branch must not have diverged since the PR was opened. Enforced by GitHub branch protection. Live state (verified via the API — re-check with `gh api repos/dasa0006/SaRe/branches/<branch>/protection` if settings change):
 
 ```
 Settings > Branches > Branch protection rules:
   main:
-    ✓ Require pull request reviews before merging (1)
-    ✓ Require linear history
-    ✓ Require branches to be up to date
-    ✓ Do not allow bypassing
+    ✓ Require status checks: quality + e2e (strict — must be up to date)
+    ✓ Do not allow bypassing (enforce admins)
 
   staging:
-    ✓ Require pull request reviews before merging (1)
-    ✓ Require linear history
-    ✓ Require branches to be up to date
-    ✓ Do not allow bypassing
+    ✓ Require status checks: quality (strict)
+    ✓ Do not allow bypassing (enforce admins)
 
   dev:
-    No protection rules — direct pushes allowed for fast iteration
+    ✓ Require status checks: quality (strict)
+    ✓ Do not allow bypassing (enforce admins)
+
+  None of the branches currently set a required-review or linear-history rule.
 ```
 
 ### Gate: Linear history
@@ -374,9 +373,10 @@ Settings > Merge button:
   ✓ Allow squash merging
   ☐ Allow merge commits
   ☐ Allow rebase merging
+  ✓ Automatically delete head branches
 ```
 
-This keeps `main` history linear and each commit a coherent unit of work. The commit message is auto-generated from the PR title + description, which must follow conventional commit format.
+Every PR merges as one squash commit, so history stays linear by construction (the linear-history protection flag itself is not set). Each commit is a coherent unit of work. The commit message is auto-generated from the PR title + description, which must follow conventional commit format.
 
 ---
 
