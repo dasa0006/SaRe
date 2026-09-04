@@ -14,6 +14,7 @@
 @import "../components/layout/footer/SiteFooter.css";
 @import "../components/layout/cookie-banner/CookieBanner.css";
 @import "../components/layout/header/SiteHeader.css";
+@import "../components/pages/Index.css";
 
 /* Block CSS files */
 @import "../components/blocks/hero/Hero.css";
@@ -31,10 +32,6 @@
 
 @import "../components/blocks/contact-form/ContactForm.css";
 @import "../components/blocks/brand-marquee/BrandMarquee.css";
-
-/* PROTOTYPE — homepage composition variants (wayfinder #115). Delete with
- * src/components/pages/home-prototype/ once the prototype is resolved. */
-@import "../components/pages/home-prototype/HomePrototype.css";
 
 /* --- Primitive Tokens ---
  * These are injected into Tailwind's theme system so they are available as
