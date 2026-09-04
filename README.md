@@ -12,6 +12,7 @@ This project ships with several documentation files. Which one you need depends 
 | Understand the project's glossary and domain language   | `CONTEXT.md`                 |
 | Learn the architecture (providers, consent, i18n, ADRs) | `docs/architecture.md`       |
 | Contribute — conventions, how-tos, decision trees       | `docs/contributing.md`       |
+| Move a change upward (branch model & promotion rules)   | `docs/branch-model.md`       |
 | Review architectural decisions and their rationale      | `docs/adr/`                  |
 | Understand the quality-gate pipeline and tooling layers | `docs/quality-gates.md`      |
 

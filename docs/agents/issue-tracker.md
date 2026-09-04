@@ -25,6 +25,10 @@ When set to `yes`, PRs run through the same labels and states as issues, using t
 
 GitHub shares one number space across issues and PRs, so a bare `#42` may be either — resolve with `gh pr view 42` and fall back to `gh issue view 42`.
 
+## Promotion issues
+
+Issues titled `ci: promote <from> to <to> …` move code upward through the branch chain (`dev` → `staging` → `main`) and are picked up like any other issue. The issue body lists what to promote (the Includes list); the mechanics — legal base branches, promotion-branch naming, PR conventions, failure modes — live in `docs/branch-model.md`. Follow that document exactly; a promotion issue never restates it.
+
 ## When a skill says "publish to the issue tracker"
 
 Create a GitHub issue.
